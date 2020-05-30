@@ -34,8 +34,14 @@
       {% endif %}
     </header>
 
+    <nav>
+      <a href="/">Home</a> - 
+      <a href="/about">About me</a> 
+    </nav>
+
+
     <main id="content" class="main-content" role="main">
-      <sub>{{ page.date | date: "%m/%d/%Y"  }}</sub>
+      <p> <em>Published: </em> {{ page.date | date: "%m/%d/%Y"  }}</p>
 
       {{ content }}
 
