@@ -1,5 +1,6 @@
 ---
 layout: default
+title: 41 books and counting! What will Adam read next?
 ---
 
 I'm an avid reader, though most of my reading focuses on fiction I do have a number of non-fiction books I highly recommend to anyone looking to learn and grow their career and personal development. 
