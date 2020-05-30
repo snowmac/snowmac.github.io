@@ -5,8 +5,6 @@ date: 2020-05-29
 categories: 
 ---
 
-# Chrome Dev Tools In Depth
-
 Welcome to my first real post in 2020. This is hybrid post, part post, part video and part notes. I'm writing this as mostly notes for the students at [Redwood Code Academy](https://redwoodcodeacademy.com/); I'm giving a demo for a friend of mine, [Abdul](https://www.linkedin.com/in/abdul-sarnor/). 
 
 # Why use in browser dev tools? 
