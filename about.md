@@ -4,6 +4,15 @@ layout: default
 
 # I'm Adam Bourg, it's nice to meet you. 
 
-I've been programming for over 18 years; since I was about 13. I'm still extremely passionate about web development. Many people still consider me to be young and they're shocked by how much experience I have. 
+<p>
+<img src="img/me.jpg" style="float: right; border-radius: 50%; padding:20px" /> 
+    Welcome to my website! I'm so glad you are here. This site has taken many different forms; this is probably my 6th attempt at blogging in 5 years. The trouble isn't motivation but consistency. Inside this site you will find dozens of posts, many from 5 years ago up to last week. My hope is you'll discover value and my voice will resonate through the words I type. I hope you will feel the passion I have and hear the excitement in my voice. 
+</p>
 
-Well, all the humblebrag aside, I'm a coffee addicted new father who has been dabbling in the dark art of blogging for about 5 years. This is attempt 5 or 6; lets see if this sticks. 
+A little bit about me, I'm a Passionate Programmer. I've been working with computers since I was 13. I knew this is what I wanted to do with my life from the beginning of my teenage years. I'm self taught but also college educated. My expertise doesn't just come from my credentials from my alma mater but from regular, consistent study of the field of software engineering. 
+
+Web development holds a special place in my heart, especially javascript. I find the technology fun and easy to work with while being powerful and flexible. My goal with this blog is excite you about development, encourage and give back to the community. 
+
+My technology specific interests right now lay within javascript memory management (I want to write a book or a video series on the topic), web assembly, building scalable systems and of course making things look pretty. 
+
+Outside of my career, I'm married to my beautiful wife Christin and we have a delightful toddler. He squeals in delight and keeps me very busy with life. 
