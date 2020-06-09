@@ -11,11 +11,40 @@ I recommend Audio books over visual reading whenever possible for fiction. Non f
 
 # What I'm currently reading
 
-May 2020: 
-* The second Harry Potter book
+June 2020: 
+* The third Harry Potter book
 * The Five Love Languages (This is the third time I've read the book)
 * The Ballad of Songbirds and Snakes by Suzanne Collins
 * Dad Tired -- non-fiction, so it's taking a while 
+
+Waiting for book to come (yes real paper): Programming Machine Learning by Paolo Perrotta
+
+# My reading backlog 
+
+These are ideas of books to read, mostly for me to reference when looking for something new to read. 
+
+Anything by authors: 
+* Clive Cussler
+* Gregg Hurwitz 
+* Jack Carr
+* Brian Haig
+* Mike Lawson
+
+Books: 
+* The Whole Truth by David Baldacci 
+* Rise and Grind by Daymond John 
+* One Rough Man by Brad Taylor 
+* This is marketing by Seth Godin 
+* Raising men by Eric Davis
+
+Developer books: 
+* Programming Machine Learning by Paolo Perrotta
+* Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems by Aurélien Géron
+* Introduction to Machine Learning with Python by Andreas Muller
+* A Common-Sense Guide to Data Structures and Algorithms, Second Edition by Jay Wengrow
+* Become an Effective Software Engineering Manager by James Stanier
+* Quantum Computing by Nihal Mehta, Ph.D.
+* Practical Security by Roman Zabicki
 
 # Must Have Developer Books
 
@@ -27,14 +56,17 @@ May 2020:
 
 ## 2020 books I've read (in no order)
 
-**Last updated on 5/30/2020**
+**Last updated on 06/09/2020**
 
-Total books read so far in 2020: 41 
+Total books read so far in 2020: 44
 
-* The Terminal List by Jack Carr (loved it)
-* Camino Winds by John Grisham (loved it)
-* Walk the wire by David Baldacci (loved it)
-* Russians Among Us by Gordon Corera (non-fiction, it was pretty good)
+* How to Pick Stocks Like Warren Buffett by Timothy Vick
+* Harry Potter and Chamber of Secrets By J.K. Rowling
+* Harry Potter and the Sorcerer's Stone By J.K. Rowling
+* The Terminal List by Jack Carr
+* Camino Winds by John Grisham
+* Walk the wire by David Baldacci
+* Russians Among Us by Gordon Corera
 * Treasure by Clive Cussler 
 * One Minute Out by Mark Greaney 
 * The power of broke by Daymond John 
