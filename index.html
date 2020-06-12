@@ -2,9 +2,16 @@
 layout: default
 ---
 
+<script type="text/javascript">
+</script>
+
+{% assign counter = 1 %}
+{% assign pageNumber = 1 %}
+
 <div class="posts">
   {% for post in site.posts %}
-    <article class="post">
+  {% increment counter %}
+    <article class="post" id="index-post-{{counter}}">
 
       <h1>        
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> 
@@ -20,4 +27,15 @@ layout: default
       <hr />
     </article>
   {% endfor %}
+</div>
+
+<div class="pagination">
+  <!-- <a href="#">&laquo;</a> -->
+  {% for count in counter %}
+    {% if count % 10 == 0 %}
+      <a href="#" data-pageNumber="{{pageNumber}}">{{pageNumber}}</a>
+      {% increment pageNumber %}
+    {% endif %}
+  {% endFor %}
+  <!-- <a href="#">&raquo;</a> -->
 </div>
