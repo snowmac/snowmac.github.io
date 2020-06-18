@@ -57,4 +57,6 @@ As you can see by doing SIMPLE maintence, I saved about $1300 this weekend. It c
 
 Why did I get into cars? I wanted to learn how to play with giant legos. I figure I have a degree; I'm an engineer, it can't be that hard! While, actually there is a bit of a yes and no to it; it's not hard, but it is hard work. The methods are the same for brakes and oil changes and other services, but the labor, the phyiscal lifting is different per project. Where you find a bolt or what size or where can be different. Like my Subaru does not have a screw in the back rotor to hold it on, my Honda did requiring a special $8 tool. Now my Honda DOES NOT have a screw in it's rotor to take 2 fing hours to remove.... 
 
+Do you want to get into cars? Check out [Chris Fix](https://www.youtube.com/channel/UCes1EvRjcKU4sY_UEavndBw) and [Scotty Kilmer](https://www.youtube.com/user/scottykilmer) on YouTube. 
+
 
