@@ -43,7 +43,8 @@ What's a car have to do with development? Everything actually. That is my Subaru
 
 Lets talk about the econmics. Yes I can make really amazing money as a developer; but unless I develop my own product, I'm capped at 40 hours a week of billable hours. That sounds amazing, but if I want to increase my income, I have to either: Invest (stocks, real estate), sell content, sell a product or service, or freelance through more web development. But the 8-10 hours I do something major for my car does something else: It works my body and saves my wallet. 
 
-Here's the cost breakdown for my services this weekened
+Here's the cost breakdown for my services this weekened:
+
 | Item | My Cost | Mechanics Cost | Savings |
 | ---- | ----- | ---- | --- |
 | Brake Pads for front and back | $60 | $200 for the front, $200 for the back | $340 |
@@ -52,6 +53,7 @@ Here's the cost breakdown for my services this weekened
 | Brake Fluid Flush | $8 | $150 | $142 | 
 | Power Steering Flush | $10 | $150 | $140 | 
 | Lug Stud Replacement | $3 | $200 | $197
+
 
 As you can see by doing SIMPLE maintence, I saved about $1300 this weekend. It cost me less then $300 in parts to fix these things; disclaimer, I did need to buy some new tools because [Harbor Freight recalled their jacks](https://www.motortrend.com/news/harbor-freight-jack-stand-recall-safety-tips/) and I decided not to chance it by dying under the car this weekend. 
 
