@@ -26,12 +26,12 @@ layout: default
     {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
     {% else %}
-      <span>&laquo; Prev</span>
+      <a href="#">&laquo; Prev</a>
     {% endif %}
 
   {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-        <em>{{ page }}</em>
+        <a href="#">{{ page }}</a>
       {% elsif page == 1 %}
         <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
       {% else %}
