@@ -21,6 +21,10 @@
     color: white;
     border: 1px solid #4CAF50;
   }
+
+  .center {
+      text-align: center;
+  }
   
   .pagination a:hover:not(.active) {background-color: #ddd;}
 @import "{{ site.theme }}";
