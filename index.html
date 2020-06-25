@@ -31,9 +31,9 @@ layout: default
 
   {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-        <a href="#">{{ page }}</a>
+        <a href="#" class="active">{{ page }}</a>
       {% elsif page == 1 %}
-        <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="active">{{ page }}</a>
       {% else %}
         <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
       {% endif %}
@@ -42,7 +42,7 @@ layout: default
     {% if paginator.next_page %}
       <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
     {% else %}
-      <span>Next &raquo;</span>
+      <a href="#">Next &raquo;</a>
     {% endif %}
   </div>
   {% endif %}
