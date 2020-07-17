@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 41 books and counting! What will Adam read next?
+title: 51 books and counting! What will Adam read next?
 ---
 
 I'm an avid reader, though most of my reading focuses on fiction I do have a number of non-fiction books I highly recommend to anyone looking to learn and grow their career and personal development. 
@@ -11,13 +11,12 @@ I recommend Audio books over visual reading whenever possible for fiction. Non f
 
 # What I'm currently reading
 
-June 2020: 
-* The third Harry Potter book
-* The Five Love Languages (This is the third time I've read the book)
-* The Ballad of Songbirds and Snakes by Suzanne Collins
-* Dad Tired -- non-fiction, so it's taking a while 
+July 2020: 
+* Programming Machine Learning by Paolo Perrotta
+* Decision Points by George W. Bush 
+* Triggered by Donald Trump Junior  
 
-Waiting for book to come (yes real paper): Programming Machine Learning by Paolo Perrotta
+I'm seeking thriller recommendations, if you have any email me at adam [dot] bourg [@] gmail [dot] com
 
 # My reading backlog 
 
@@ -31,20 +30,16 @@ Anything by authors:
 * Mike Lawson
 
 Books: 
-* The Whole Truth by David Baldacci 
 * Rise and Grind by Daymond John 
 * One Rough Man by Brad Taylor 
 * This is marketing by Seth Godin 
 * Raising men by Eric Davis
 
 Developer books: 
-* Programming Machine Learning by Paolo Perrotta
-* Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems by Aurélien Géron
-* Introduction to Machine Learning with Python by Andreas Muller
-* A Common-Sense Guide to Data Structures and Algorithms, Second Edition by Jay Wengrow
-* Become an Effective Software Engineering Manager by James Stanier
 * Quantum Computing by Nihal Mehta, Ph.D.
 * Practical Security by Roman Zabicki
+* Become an Effective Software Engineering Manager by James Stanier
+* A Common-Sense Guide to Data Structures and Algorithms, Second Edition by Jay Wengrow
 
 # Must Have Developer Books
 
@@ -56,10 +51,17 @@ Developer books:
 
 ## 2020 books I've read (in no order)
 
-**Last updated on 06/09/2020**
+**Last updated on 07/17/2020**
 
-Total books read so far in 2020: 44
+Total books read so far in 2020: 51
 
+* Deliver us from evil  by David Baldacci
+* Black Klansman by Ron Stallworth 
+* The whole truth by David Baldacci
+* Two kinds of truth by Michael Connelly
+* Cashing the dime by Michael Connelly
+* The Closers by Michael Connelly
+* The drop by Michael Connelly
 * How to Pick Stocks Like Warren Buffett by Timothy Vick
 * Harry Potter and Chamber of Secrets By J.K. Rowling
 * Harry Potter and the Sorcerer's Stone By J.K. Rowling
