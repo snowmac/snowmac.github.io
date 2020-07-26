@@ -2,7 +2,7 @@
 layout: post
 title: "Lets stop being stupid about security"
 date: 2020-07-26
-categories: 
+categories: security sql
 ---
 
 I hate it when I run across what is reported to be an epic hack involving Russians, Chinese or spies only it turns out the hacking victims were not taking any form of basic security seriously. Its like asking Bonnie and Clyde to rob a bank where the combo is printed on a large banner outside the vault and there are no keys to any safe deposit boxes. Or it's like letting the fox get inside the hen house. 
