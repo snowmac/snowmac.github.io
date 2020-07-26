@@ -130,3 +130,7 @@ prepStmt.close();
 # Does your ORM support prepared statements? 
 
 Active Record does right out of the box; it's automatic, similar for Sequelize. Should you turn it off, like this [idiot says](https://medium.com/@devinburnette/be-prepared-7768d1a111e1)? Hell NO!
+
+# Further reading
+
+If you want to dive more into this topic, [W3 Schools](https://www.w3schools.com/sql/sql_injection.asp) has a really good guide to injections. 
