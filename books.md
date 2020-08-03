@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 51 books and counting! What will Adam read next?
+title: 54 books and counting! What will Adam read next?
 ---
 
 I'm an avid reader, though most of my reading focuses on fiction I do have a number of non-fiction books I highly recommend to anyone looking to learn and grow their career and personal development. 
@@ -11,12 +11,11 @@ I recommend Audio books over visual reading whenever possible for fiction. Non f
 
 # What I'm currently reading
 
-July 2020: 
 * Programming Machine Learning by Paolo Perrotta
-* Decision Points by George W. Bush 
-* Triggered by Donald Trump Junior  
+* Get Your Life Back: Everyday Practices for a World Gone Mad by John Eldredge
+* The Scarecrow By Michael Connelly
 
-I'm seeking thriller recommendations, if you have any email me at adam [dot] bourg [@] gmail [dot] com
+I'm seeking thriller recommendations, if you have any please email me at adam [dot] bourg [@] gmail [dot] com
 
 # My reading backlog 
 
@@ -51,10 +50,13 @@ Developer books:
 
 ## 2020 books I've read (in no order)
 
-**Last updated on 07/17/2020**
+**Last updated on 08/03/2020**
 
-Total books read so far in 2020: 51
+Total books read so far in 2020: 54
 
+* Up Country by Nelson DeMille
+* Decision Points by George W. Bush
+* Triggered by Donald Trump Junior (Book sucked)
 * Deliver us from evil  by David Baldacci
 * Black Klansman by Ron Stallworth 
 * The whole truth by David Baldacci
