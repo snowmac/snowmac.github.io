@@ -5,7 +5,7 @@ date: 2020-09-03
 categories: blogging
 ---
 
-July 30, that last day you posted. Now 3 posts in 3 days? What is going on MAN? Glad you asked, rather I asked it for you. August was a whirlwind of things: 
+July 30, that is the last day you posted. Now 3 posts in 3 days? What is going on MAN? Glad you asked, rather I asked it for you. August was a whirlwind of things: 
 
 - Forming a new business 
 - Parenting a now 13 month old (who ALWAYS wants Dada's attention)
