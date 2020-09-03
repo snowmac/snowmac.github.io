@@ -4,8 +4,9 @@ description: A blog about Javascript, industry, careers and all things web devel
 show_downloads: false
 feed:
   excerpt_only: true
-paginate: 10
+paginate: 20
 paginate_path: "/blog/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+google_analytics: UA-5394820-3
