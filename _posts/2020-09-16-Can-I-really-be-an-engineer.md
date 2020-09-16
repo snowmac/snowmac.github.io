@@ -5,8 +5,6 @@ date: 2020-09-16
 categories: engineer starting-out development
 ---
 
-# You know me, can I really be an engineer?
-
 A friend of mine recently got in touch with me, I was catching up with him and we were talking about our lives and careers. He's struggling to make a living without much clear direction, I suggested he should become an engineer becasue the starting salaries are really good and you can build cool stuff. He's a creative so it makes a lot of sense. 
 
 He posed the above question to me. I answered, with a question: 
