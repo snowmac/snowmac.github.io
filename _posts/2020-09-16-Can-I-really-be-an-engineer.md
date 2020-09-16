@@ -9,7 +9,7 @@ A friend of mine recently got in touch with me, I was catching up with him and w
 
 He posed the above question to me. I answered, with a question: 
 
-```
+```text
 Suppose Santiago was a shepherd. He sold a bunch of his sheep to his friend, then he sold, 10% of his flock, 6 sheep to a merchant in town. He took the proceeds to travel a journey to find a lost treasure near the pyramids of Egypt.
 ```
 
