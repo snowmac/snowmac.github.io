@@ -9,8 +9,8 @@ A friend of mine recently got in touch with me, I was catching up with him and w
 
 He posed the above question to me. I answered, with a question: 
 
-```text
-Suppose Santiago was a shepherd. He sold a bunch of his sheep to his friend, then he sold, 10% of his flock, 6 sheep to a merchant in town. He took the proceeds to travel a journey to find a lost treasure near the pyramids of Egypt.
+```math
+Suppose Santiago was a shepherd. He sold a bunch of his sheep to his friend, then he sold, 10% of his flock, 6 sheep to a merchant in town. He took the proceeds to travel a journey to find a lost treasure near the pyramids of Egypt. How many sheep did he have in his whole flock?
 ```
 
 Yes, that is Santiago from the Alchemist. This is a basic word problem, to solve it, you need to use basic Algebra. 
@@ -45,7 +45,7 @@ I told him, if you can solve that problem, you can be an engineer. Why?
 
 # Why can you be an software engineer?
 
-I argue that if you can solve the above problem you have the basic skills to move from joe plubmer to joe programmer. Here's why: 
+I argue that if you can solve the above problem you have the basic skills to move from joe plumber to joe programmer. Here's why: 
 
 1. Solving word problems are a lot like solving real business problems. You need to anaylize the problem and determine some kind of out come. It's logical, step by step, algorithmic thinking. 
 2. "Coding" is only one part of the job, sure for some people it's 80-100% of the job, but it's not the only thing. Back when I was doing "Agile" scrum development, I would routinely spend 2-3 hours a day in meetings. I wasn't even in management. Often times, developers spend a part of their time: reviewing requirements, asking for clarification, writing tests, arguing with QA and writing some code. 
