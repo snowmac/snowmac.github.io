@@ -33,7 +33,7 @@ What does className actually do? It appears NOTHING at all. Why can't we use `cl
 
 # Why is this a problem? 
 
-Well, you can in fact pass in strings, but if you need to use a variable, thats all it does, it takes a string. So to get dynamic behavior you have to write it. Duh, Adam, CSS you'd have to write it anyways. Well, yeah, but if we're extending existing markup and code, can't we make it better? 
+Well, you can in fact pass in strings, but if you need to use a variable, thats all it does, it takes a string. So to get dynamic behavior you have to write it. Duh, Adam, CSS you'd have to write it anyways. Well, yeah, but if we're extending existing markup and code, can't we make it better? Otherwise we're pointlessly reinventing the wheel to be cool. I hate doing extra work to be cool; I'm a programmer, I'm supposed to work smarter not harder!
 
 Enter [CLSX](https://www.npmjs.com/package/clsx), [classnames](https://www.npmjs.com/package/classnames#usage-with-reactjs) or the [DIY approach](https://programmingwithmosh.com/react/multiple-css-classes-react/): these are great, but if we're going to use classNames={} can't it automatically support dynamic nature? I'd love to see this (without an extra lib, or method call!): 
 
