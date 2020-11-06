@@ -119,3 +119,4 @@ Other reasons I chose the 1099 route:
 1. 199A. This thing is magical; it will save me a lot of money this year
 2. Deduct a ton of different tings; my health insurance premiums for one thing
 3. More control
+4. SEP-IRA
