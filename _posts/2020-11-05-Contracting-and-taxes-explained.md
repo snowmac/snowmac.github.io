@@ -28,7 +28,6 @@ Basically 1099 from the IRS perspective means you're self employed. You get a cl
 2. The employer has a legal share of social security and medicare taxes
 3. The employer is typically required to carry many forms of insurance: unemployment, health insurance, errors and omissions and finally liability insurance
 
-
 # Show me the money
 
 I'm going to give you a couple of different case studies to consider when you're weighing your options between W2 or 1099 contracting. 
@@ -52,7 +51,7 @@ At the end of the year you will gross $170,000.
 2. You will pay state income tax. ($7820)
 3. Since you're in the single bracket, so the tax rate is 32% for your income, remember it's a progressive tax; thus your effective tax rate is 18.8% ($31,905) 
 
-After all taxes, you will NET: $117,270. Not bad. But is this the best option? $117k will do a LOT for you, but what aobut the 1099 option? 
+After all taxes, you will NET: $117,270. Not bad. But is this the best option? $117k will do a LOT for you, this is $58.50 an hour after taxes, but what about the 1099 option? 
 
 ## 1099 breakdown
 At the end of the year you will gross $200,000. [See the IRS for 12.4% and 2.9% info. ](https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)
@@ -62,9 +61,11 @@ Lets talk state and social security taxes first.
 2. You will pay 2.9% for medicare on ALL income. ($5800)
 3. You will pay state income tax. ($9200)
 
-Typically for the above, you will have to file a quarterly report with the IRS and some states also require it for their tax system. Remember talk to a CPA. Part of quaterlies is to pay 25% of the sum of 1 and 2 based on actuals: $5168 per quater. 
+Typically for the above, you will have to file a quarterly report with the IRS and some states also require it for their tax system. Remember talk to a CPA. Part of quarterlies is to pay 25% of the sum of 1 and 2 based on actuals: $5168 per quarter. 
 
 You're in the same tax bracket as the W2 role thus you're looking at a tax bill of about $31,905. This is calculated however before social taxes are taken out and any deductions. 
+
+Total burden: $62,777, total net income of: $137,223; or about $68.62 an hour. 
 
 ### Deductions are key to saving on income taxes
 
@@ -109,7 +110,40 @@ Channeling my oxy clean commercial watching days; but wait there is more! Love h
 $40,000 + $12,400 + $37,640 = $90,400 able to deduct.
 $200,000 - $90,400 = $109,600 of AGI
 
-Given that in this sitatuion w'ere at an AGI of $109,600. Our effective tax burden is $17,417; a mere 15.9% tax rate.... 
+Given that in this situation we are at an AGI of $109,600. Our effective tax burden is $17,417; a mere 15.9% tax rate.... 
+
+Combining everything together: 
+
+1. Our income tax is $17,417
+2. Our Social Security and Medicare burden is $31,905
+3. Our total take home income is: $150,678; or about $75 an hour AFTER taxes
+
+# What if the W2 offered the same rate? Let's figure that out!
+$100/h2 W2 rate, 200k annual gross income: 
+
+1. Social Security and Medicare burden is $15,300
+2. State income tax of: $9200
+3. Federal Income tax:  $41,413 (Standard deduction, no extras)
+
+$15,300 + $9200 + 41,413 = $65,913 tax burden, thus net income of $134,087. An after hourly rate of $67.04. 
+
+It's great, really good money. 
+
+# What's the best outcome?
+
+Lets look at the HOURLY rate after taxes because it paints the most clear picture.
+
+1. 1099 without the 199A: $68.61 an hour (after taxes)
+2. 1099 with the 199A: $75 an hour (after taxes)
+3. W2 at the same rate as 1099: $67.04 an hour (after taxes)
+
+If the 199A were to go away, would the 1099 option be worth it over a W2 option? It depends, yes its a little bit more over head to gain an extra $2000 with some very basic deductions. The advantage though is that as your situation changes so does the tax ADVANTAGE. If you get married, buy a house or increase your SEP-IRA contributions you will see a wider increase of hourly net pay. This is helpful because it gives you the ability to control your tax burden. 
+
+Also, social security is capped at $128,000 of earned income, which in the beginning of the year results in a smaller check, but towards the end of the year your check gets a bit bigger. Maybe $300-500 more a month. 
+
+Some cons that could factor into a 1099 would be if the client requires: 
+1. Errors and omissions insurance; this can be expensive, typically you'd increase your rate to offset the expense but might not always be feasible. 
+2. Unemployment insurance. Technically you don't have to carry it, but if the client required it for some reason, it would increase the costs (And possible deduction!) of taking on that client
 
 # What does Adam do? 
 
@@ -120,3 +154,8 @@ Other reasons I chose the 1099 route:
 2. Deduct a ton of different tings; my health insurance premiums for one thing
 3. More control
 4. SEP-IRA
+5. I can deduct my health insurance which works out to be almost $5000 a year
+
+I avoid clients that require errors and omissions insurance or I at-least am a sub contractor covered by someone else's insurance. I don't carry unemployment insurance because I'm always adding to my savings on every paycheck. 
+
+I think with or without the 199A tax law, being a 1099 contractor is the best employment option. You are in the drivers seat, you are a vendor. For me, it's part of my mindset, for many others it could be quite scary not to have employer provided benefits. For example, I was working with MBO for a while and my account manager said that she'd be terrified to have to carry hear own health insurance without her employer! Personally with the market place and the Affordable Care Act that American insurance is getting better, but what do I know? :) 
