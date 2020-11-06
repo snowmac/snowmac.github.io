@@ -3,7 +3,7 @@ title: Adam Bourg's Development Blog
 description: A blog about Javascript, industry, careers and all things web development
 show_downloads: false
 feed:
-  excerpt_only: true
+  excerpt_only: false
 paginate: 20
 paginate_path: "/blog/page:num/"
 plugins:
