@@ -2,7 +2,7 @@
 layout: post
 title: "I am not fat"
 date: 2020-11-28
-categories: fat lifestyle health fitness
+categories: fat lifestyle health fitness potato-diet
 ---
 
 I'm not fat. There I said it, I should feel better about myself, right? Size is just a number. Right? Come on you know it’s true, size, weight and all that jazz is just a BS figure on the scale. That's what we tell ourselves to make us feel better. 
