@@ -29,7 +29,7 @@ The plan according to Penn’s buddy, Cray Ray, aka “Ray Cronise” is to do t
 
 One big thing with CrayRay and Penn is the need for a scale, the smartass of scales. On an impluse I plopped down $100 for the [Withings Body + scale](https://www.withings.com/us/en/body-plus). It's been 10 days! 10 DAYS!!! I'm 326.4, on day 2 of the plan. In 10 days, 1 of which involving nothing but potatoes, I've lost 9 pounds. This is AMAZING. 
 
-On day 1, it's black Friday, or sucker day of the year. Everyone piles in their car after a Thanksgiving Day hang over consisting of pie and turkey, to go buy more stuff to stuff into their garage in six months. It's all American in style and glory. What am I do? Well, shopping for TVs on Amazon like every other fat guy scared out of his mind of COVID-19. I'm stilling on my couch waiting for the oven, 350 degrees for 45 minutes, to produce 9 potatoes. That’s right 9 potatoes, or about 1000 ish calories. Once done cooking, I scarf down one single sweet potato. It's sweet (no shit sherlock), delicious and surprisingly moist. I like it, I chase it with 4 tiny petite potatoes and some black coffee. This diet is sure boring. 
+On day 1, it's black Friday, or sucker day of the year. Everyone piles in their car after a Thanksgiving Day hang over consisting of pie and turkey, to go buy more stuff to stuff into their garage in six months. It's all American in style and glory. What am I do? Well, shopping for TVs on Amazon like every other fat guy scared out of his mind of COVID-19. I'm sitting on my couch waiting for the oven, 350 degrees for 45 minutes, to produce 9 potatoes. That’s right 9 potatoes, or about 1000 ish calories. Once done cooking, I scarf down one single sweet potato. It's sweet (no shit sherlock), delicious and surprisingly moist. I like it, I chase it with 4 tiny petite potatoes and some black coffee. This diet is sure boring. 
 
 Lunch time rolls around and I make some food for the kiddo and thanksgiving dinner for lunch for the wife. What do I have? If you guessed potatoes, you'd win the prize! I had 2 potatoes, a red and white. It was bland, boring and good. 
 
@@ -59,7 +59,7 @@ That's a lot of potatoes! The berries are for my son, Luke, for him to eat with 
 
 # Before shots and stats 
 
-If you don't want to see me shirt less, it's time to close the page. My starting stats on 11/20/2020 are: 335 LBS, but the offical, diet starting stats are: 333.4 lbs, BMI of 41.7. I'll be updating this blog with progress, but here's to my weighloss and success. 
+If you don't want to see me shirtless, it's time to close the page. My starting stats on 11/20/2020 are: 335 LBS, but the offical, diet starting stats are: 333.4 lbs, BMI of 41.7. I'll be updating this blog with progress, but here's to my weightloss and success. 
 
 I'm off to eat more potatoes! 
 
