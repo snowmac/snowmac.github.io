@@ -9,7 +9,7 @@ This is day two. I wrote about day one, on day two and that was hard, hard to re
 
 # Day 2 
 
-I'm jolted awake by my wife, the baby is upset again. It's 7:00 AM on a Saturday, dude go back to bed. But I get up, take a leak and step on my Withings scale. It tells me the weather, which basically says its going to be awful, but it tells me the most amazing news: I'm 326 LBS. 11 pounds DOWN? Either Withings is lying to me, or this is the best thing ever!!!!!!!!!!! 
+I'm jolted awake by my wife, the baby is upset again. It's 7:00 AM on a Saturday, dude go back to bed. But I get up, take a leak and step on my Withings scale. It tells me the weather, which basically says its going to be awful, but it tells me the most amazing news: I'm 326 LBS. 9 pounds DOWN? Either Withings is lying to me, or this is the best thing ever!!!!!!!!!!! 
 
 I get the baby up, change his diaper, take him on a car ride to Panera. I stop for some [free black coffee](http://www.adambourg.com/coffee/2020/07/17/free-fuel.html), a large ice water then head to get my wife a bagel from Enstein's and a Chai from Starbucks. That was my idea, I'm a nice husband like that :) 
 
