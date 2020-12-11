@@ -69,35 +69,23 @@ Total burden: $62,777, total net income of: $137,223; or about $68.62 an hour.
 
 ### Deductions are key to saving on income taxes
 
-Here's a brief list of things you can deduct from your taxes: 
 
-1. Home office credit. Work from home? You can deduct upto $600 a year off your taxes
-2. Internet costs
-3. Rent or mortgage expenses (eg, you rent an office or you have a house dedicated in your room for your work)
-4. Health Insurance 
-5. Cell Phone usage (Anything over 50% of the bill puts you at a higher risk of audit, best bet for that and internet to claim 40% of the cost)
-6. Business insurance
-7. Furniture and office supplies
-8. New equipment 
-9. Business Travel Expenses 
-10. Travel / To and From client site if it's not part of a regular commute; EG need to drive 100 miles to meet the client to demo the project
-11. Food / beverage: You can take your client out to lunch; but you can only write off 50% of the tab. 
-12. Self Employed Pension Individual Retirement Plan. Basically a self funded pension; works like a 401k. Basically you can sock away $57,000 before (Traditional) or after taxes (Roth) 
+Here's a brief list of things you can deduct from your taxes with some examples.  
 
-Given the above, lets figure out our deductions: 
+| Deduction Example | Example Amount | 
+| Home office credit. Work from home? You can deduct upto $600 a year off your taxes | $600 | 
+| Internet costs | $0; we use a co-working space | 
+| Rent or mortgage expenses (eg, you rent an office or you have a house dedicated in your room for your work) | Rent a co-working space for $300 a month; $3600 / year |
+| Health Insurance | $400 a month; yay! $4800 / year | 
+| Cell Phone usage (Anything over 50% of the bill puts you at a higher risk of audit, best bet for that and internet to claim 40% of the cost) | N/A |
+| Business insurance | $20 a month! $240 / year | 
+| Furniture and office supplies | Pens, markers and a hermin miller chair: $700 / year | 
+| New equipment | Brand new Macbook baby; lets get an iPad too. $2700 / year | 
+| Business Travel Expenses | N/A | 
+| Travel / To and From client site if it's not part of a regular commute; EG need to drive 100 miles to meet the client to demo the project | N/A, covid 19 man :( | 
+| Food / beverage: You can take your client out to lunch; but you can only write off 50% of the tab. | N/A, covid 19 woman |
+| Self Employed Pension Individual Retirement Plan. Basically a self funded pension; works like a 401k. Basically you can sock away $57,000 before (Traditional) or after taxes (Roth) | $25,000 in a traditional account; we were not feeling optimistic about the future. | 
 
-1. $600
-2. $0; we use a co-working space
-3. Rent a co-working space for $300 a month; $3600 / year
-4. $400 a month; yay! $4800 / year
-5. N/A
-6. $20 a month! $240 / year
-7. Pens, markers and a hermin miller chair: $700 / year
-8. Brand new Macbook baby; lets get an iPad too. $2700 / year
-9. N/A
-10. N/A, covid 19 man
-11. N/A, covid 19 woman 
-12. $25,000 in a traditional account; we were not feeling optimistic about the future. 
 
 That means we can deduct the total: $37,640. That means we can take the Gross amount less our deductions less the standard deduction of $12,400 to get an Adjusted Gross Income of $149,960. Which means that the tax burden would be $30,070; about 18.5% effective tax rate. Thus your take home would be $132,290.
 
