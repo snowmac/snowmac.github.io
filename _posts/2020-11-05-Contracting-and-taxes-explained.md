@@ -121,9 +121,10 @@ It's great, really good money.
 
 Lets look at the HOURLY rate after taxes because it paints the most clear picture.
 
-1. 1099 without the 199A: $68.61 an hour (after taxes)
-2. 1099 with the 199A: $75 an hour (after taxes)
-3. W2 at the same rate as 1099: $67.04 an hour (after taxes)
+| Case Study | After taxes hourly rate | 
+| 1099 without the 199A | $68.61 | 
+| 1099 with the 199A | $75.00 | 
+| W2 at the same rate as 1099 | $67.04 | 
 
 If the 199A were to go away, would the 1099 option be worth it over a W2 option? It depends, yes its a little bit more over head to gain an extra $2000 with some very basic deductions. The advantage though is that as your situation changes so does the tax ADVANTAGE. If you get married, buy a house or increase your SEP-IRA contributions you will see a wider increase of hourly net pay. This is helpful because it gives you the ability to control your tax burden. 
 
