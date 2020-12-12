@@ -2,7 +2,7 @@
 layout: post
 title: "I used to be fat"
 date: 2020-12-12
-categories: 
+categories: fat lifestyle health fitness potato-diet
 ---
 
 Oh man, 2 weeks ago, I started on this journey, the great potato famine. I wasn't going to tell anyone, but I quickly let that go and made it to the front page of the Hacker News. I posted "I am not fat", and oh boy people were mean. Some people listened and I even got new Linkedin connections because people are curious or excited about what I'm doing. Today, I'm going to share my results, talk about what's next and address some of the common feedback. 
@@ -17,9 +17,7 @@ Well, they do work. The problem isn't their effectiveness, the problem is people
 
 ## Keto is better, stop eating carbs
 
-I got a variant of this several times. Dr Joel Fuhrman, author of the Nutritarian Diet goes into a lot of detail of why Keto is really bad for you in his book [The end of dieting](https://www.amazon.com/End-Dieting-How-Live-Life/dp/0062249339). Here are a [few](https://www.mayoclinic.org/healthy-lifestyle/weight-loss/in-depth/low-carb-diet/art-20045831) other [examples](https://www.drfuhrman.com/elearning/blog/124/why-a-nutritarian-diet-is-superior-to-the-ketogenic-diet-in-the-fight-against-cancer)
-
-[Ketoacidosis](https://www.health.com/weight-loss/keto-diet-side-effects) is a risk of the keto diet. 
+I got a variant of this several times. Dr Joel Fuhrman, author of the Nutritarian Diet goes into a lot of detail of why Keto is really bad for you in his book [The end of dieting](https://www.amazon.com/End-Dieting-How-Live-Life/dp/0062249339). Here are a [few](https://www.mayoclinic.org/healthy-lifestyle/weight-loss/in-depth/low-carb-diet/art-20045831) other [examples](https://www.drfuhrman.com/elearning/blog/124/why-a-nutritarian-diet-is-superior-to-the-ketogenic-diet-in-the-fight-against-cancer). [Ketoacidosis](https://www.health.com/weight-loss/keto-diet-side-effects) is a risk of the keto diet. 
 
 The biggest why I'm agianst Keto is my doctor told me that it would likely harm my kidneys and liver, while increasing my risks for heart disease. 
 
