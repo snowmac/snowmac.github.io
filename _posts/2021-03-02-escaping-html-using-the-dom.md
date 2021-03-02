@@ -34,7 +34,7 @@ This is the messy jQuery code I'm working to fix:
 });
 ```
 
-Veracode is complaining about the response in the two functions, the `res.msg` and `err` variables because they could contain HTML and inject a Cross Site Scripting bug (XSS). I could do something like use Regex, set something on the global scope or import something like HTML Escape Goat. Or I could use the dom mehtod: `document.createTextNode`. 
+Veracode is complaining about the response in the two functions, the `res.msg` and `err` variables because they could contain HTML and inject a Cross Site Scripting bug (XSS). I could do something like use Regex, set something on the global scope or import something like HTML Escape Goat. Or I could use the dom method: `document.createTextNode`. 
 
 Being a through developer, I figured out that if you did something like `document.createTextNode("<h1>jQuery is stupid</h1>")` will give you the string encoding with tags of jQuery is stupid. Just what I wanted; so a minor change to the code and veracode is no longer complaining. Doc create text node will return a string, therefore you can call it inline:  
 
