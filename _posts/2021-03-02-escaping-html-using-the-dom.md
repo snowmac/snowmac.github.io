@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Using plain javascript to espace HTML"
+date: 2021-03-02
+categories: javascript dom frontend
+---
+
 At work I've spent the last 6 months working on security issues. From jQuery updates to React, Angular and bootstrap and every possible framework in between. I'm going to show you a little trick you can use from the DOM to sanitize output without bringing in a library. 
 
 This is the messy jQuery code I'm working to fix: 
