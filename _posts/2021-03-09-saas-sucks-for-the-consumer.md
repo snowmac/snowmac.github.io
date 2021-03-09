@@ -4,12 +4,11 @@ title: "Saas sucks: we can do better"
 date: 2021-03-09
 categories: business models software
 ---
-
-SAAS -- Software as a "Service", ahem Subscription, sucks. Its really good for software companies and for the engineers that build the systems but as an end user it totally sucks. I'm going to talk about why, and what we can do better as an industry. 
+SAAS -- Software as a "Service", ahem Subscription, sucks. It's really good for software companies and for the engineers that build the systems but as an end user it totally sucks. I'm going to talk about why, and what we can do better as an industry. 
 
 I believe that the world has to many subscription services in the world. The world is filling up with companies that want to automatically bill me for stuff I use or "services" they provide. As a consumer I'm tired of it. 
 
-Reoccurring charges is what its all about in business, getting to the automatic customer. Removing the buy decision from every purchase to the point where buying things is fully automatic. It's a dream and a reality for many business. Netflix, Hulu, Disney Plus, Spotify, 1Password and even your public utility does it. When do I think it's good as a consumer? Well, for things you have to pay for, my phone, mortgage, utilities; all on automatic payments. But I'm growing tired of the companies that have decided to take the monthly fee approach for their software. 
+Recurring charges is what it's all about in business, getting to the automatic customer. Removing the buy decision from every purchase to the point where buying things is fully automatic. It's a dream and a reality for many business. Netflix, Hulu, Disney Plus, Spotify, 1Password and even your public utility does it. When do I think it's good as a consumer? Well, for things you have to pay for, my phone, mortgage, utilities; all on automatic payments. But I'm growing tired of the companies that have decided to take the monthly fee approach for their software. 
 
 Physical resources like where you live or natural resources you consume make perfect sense for automatic billing. Even mail order clothes like Stitch Fix. Digital resources do not make sense to me as a consumer for automatic billing. 
 
@@ -45,7 +44,7 @@ Some products and services are better for both the consumer and the producer to 
 
 # TL;DR; 
 
-* Subscription based "SaaS" makese sense for true cloud services like AWS, New Relic etc... 
+* Subscription based "SaaS" makes sense for true cloud services like AWS, New Relic etc... 
 * Subscriptions are good for cash flow and when it can provide real value to the client 
 * Not everything needs to be saas, eg, if it's mostly client not client server, you should have the option to upgrade to cloud capability
 * For apps like Sublime, 1Password, Word etc... Charge a license fee, then offer an annual add-on for cloud services, cloud sync, backup etc... but let me run locally offline if I want to
