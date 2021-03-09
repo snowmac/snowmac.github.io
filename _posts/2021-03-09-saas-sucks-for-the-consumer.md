@@ -46,6 +46,6 @@ Some products and services are better for both the consumer and the producer to 
 # TL;DR; 
 
 * Subscription based "SaaS" makese sense for true cloud services like AWS, New Relic etc... 
-* Subscriptions are good for cash flow and when can provide real value to the client 
+* Subscriptions are good for cash flow and when it can provide real value to the client 
 * Not everything needs to be saas, eg, if it's mostly client not client server, you should have the option to upgrade to cloud capability
 * For apps like Sublime, 1Password, Word etc... Charge a license fee, then offer an annual add-on for cloud services, cloud sync, backup etc... but let me run locally offline if I want to
