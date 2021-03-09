@@ -37,7 +37,7 @@ The cloud is a tangible service a software company can provide. It allows you to
 
 The real reason that it makes sense is that it provides consistent cash flow for the company. It's a great business decision. You get customers for the next several years who are wrapped into paying monthly or annual fees that automatically renew wether they use your stuff or not. It's like the 24 Hour Fitness model of the gym, sign up 10,000 people at $19.99 a month, 1000 people will probably show up and the rest are profit. It's great for the business. 
 
-# Saas opens up to competition
+# Saas opens up an angle to the competition
 
 I've been trying to figure out how to start my own saas company; building a cloud based product that I could sell. I don't really have any ideas with a unique angle, but one thing I keep coming back to is I'd like to stop paying for so many subscriptions, I'd happily switch from 1Password to a competitor with a nice UI if I could pay per license per machine. If CDs weren't such a pain, I'd probably buy a few of those because it's nice to have copies of the best of Rafi so my toddler can listen to it for literally 10 hours a day. 
 
