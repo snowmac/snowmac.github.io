@@ -31,7 +31,7 @@ const AddToCartButton = (props) => {
 
 # The grid options
 
-Next we use the <a href="https://www.ag-grid.com/javascript-data-grid/column-definitions/" target="_blank">colDefs</a> option from the <a href="https://blog.ag-grid.com/customising-react-data-grid-with-hooks-and-functions/#cellrenderer" target="_blank">Ag-Grid Documentation. It allows us to set a bunch of fields, names as well as a cellRenderer which is a React Component. 
+Next we use the <a href="https://www.ag-grid.com/javascript-data-grid/column-definitions/" target="_blank">colDefs</a> option from the <a href="https://blog.ag-grid.com/customising-react-data-grid-with-hooks-and-functions/#cellrenderer" target="_blank">Ag-Grid Documentation</a>. It allows us to set a bunch of fields, names as well as a cellRenderer which is a React Component. 
 
 ```javascript
 const colDefs = [
