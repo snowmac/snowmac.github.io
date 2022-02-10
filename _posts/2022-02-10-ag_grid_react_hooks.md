@@ -44,14 +44,13 @@ const colDefs = [
 Finally when we render the AgGridReact Component, we pass in a call to make the cellRenderer to the correct component. 
 
 ```javascript
-  <AgGridReact
-      defaultColDef={{sortable: true, filter: true }}
-      pagination={true}
-      rowData={data}
-      columnDefs={colDefs}
-      frameworkComponents={{ addToCartButton: AddToCartButton }} 
-  >
-  </AgGridReact>
+<AgGridReact
+    defaultColDef={{sortable: true, filter: true }}
+    pagination={true}
+    rowData={data}
+    columnDefs={colDefs}
+    frameworkComponents={{ addToCartButton: AddToCartButton }} 
+/>
 ```
 
 # Final Solution
@@ -79,13 +78,12 @@ const colDefs = [
 
 return (
   <AgGridReact
-      defaultColDef={{sortable: true, filter: true }}
+      defaultColDef={{ sortable: true, filter: true }}
       pagination={true}
       rowData={data}
       columnDefs={colDefs}
       frameworkComponents={{ addToCartButton: AddToCartButton }} 
-  >
-  </AgGridReact>
+  />
 );
 
 }
