@@ -30,3 +30,4 @@ Well, it depends. For me it really boils down to:
 4. Short interview process. If you have 6 interviews, a bunch of take home work and other crap; I'm not interested. 
 5. Autonomy of schedule. I have Therapy at 9 am on Thursdays and I teach a computer programming class at a local highschool as a volunteer Wednesday afternoons. Neither is negotiable. I need therapy and to teach kids to program. 
 6. Equity, Options or RSUs -- I need and want skin in the business. 
+ 
