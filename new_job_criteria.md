@@ -22,10 +22,11 @@ I look forward to hearing from you.
 
 # What do I want in my next job? 
 
-Well, it depends. Building my own product sounds awesome. For me it really boils down to: 
+Well, it depends. For me it really boils down to: 
 
 1. Remote only roles. Part time on site, 3 days a week from home etc... no thank you. I work from home or from a hotel when traveling. If it's not remote, please don't reach out. 
-2. Full time or Contract. Tell me up front. I mostly consider contract 1099 or C2C roles though I'm open to a FTE role at the right company. 
+2. Full time or Contract. Tell me up front. 
 3. Disclosure of rate. If it's contract, give me your C2C/1099 rate if it's a salary give me the full range. If you don't like it, I'm very sorry but it is now <a href="https://www.laboremploymentlawblog.com/2020/12/articles/bonus-compensation/colorado-new-equal-pay-act/" target="_blank">Colorado State Law</a>. 
 4. Short interview process. If you have 6 interviews, a bunch of take home work and other crap; I'm not interested. 
-
+5. Autonomy of schedule. I have Therapy at 9 am on Thursdays and I teach a computer programming class at a local highschool as a volunteer Wednesday afternoons. Neither is negotiable. I need therapy and to teach kids to program. 
+6. Equity, Options or RSUs -- I need and want skin in the business. 
