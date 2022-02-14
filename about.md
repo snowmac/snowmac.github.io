@@ -14,5 +14,3 @@ A little bit about me, I'm a Passionate Programmer. I've been working with compu
 Web development holds a special place in my heart, especially javascript. I find the technology fun and easy to work with while being powerful and flexible. My goal with this blog is excite you about development, encourage and give back to the community. 
 
 My technology specific interests right now lay within javascript memory management (I want to write a book or a video series on the topic), web assembly, building scalable systems and of course making things look pretty. 
-
-Outside of my career, I'm married to my beautiful wife Christin and we have a delightful toddler. He squeals in delight and keeps me very busy with life. 
