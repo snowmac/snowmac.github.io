@@ -49,22 +49,22 @@ title: Ice Investing
       <div class="col d-flex align-items-start">
         <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"></use></svg>
         <div>
-          <h4 class="fw-bold mb-0">Featured title</h4>
-          <p>Paragraph of text beneath the heading to explain the heading.</p>
+            <h4 class="fw-bold mb-0">What about winter?</h4>
+            <p>Because it's inside building we don't need to winterize the structure. We will need to run some heaters to keep the room above freezing. We can sell water and ice year round, though most sales will be of water in the winter.</p>
         </div>
       </div>
       <div class="col d-flex align-items-start">
         <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#geo-fill"></use></svg>
         <div>
-          <h4 class="fw-bold mb-0">Featured title</h4>
-          <p>Paragraph of text beneath the heading to explain the heading.</p>
+          <h4 class="fw-bold mb-0">Our Pricing</h4>
+          <p>$0.40/gallon water, $1.75 for a 10 pound bag, $3.00 for a 20 pound bag. $2.50 for a bulk 20 pound (eg a cooler).</p>
         </div>
       </div>
       <div class="col d-flex align-items-start">
         <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"></use></svg>
         <div>
-          <h4 class="fw-bold mb-0">Featured title</h4>
-          <p>Paragraph of text beneath the heading to explain the heading.</p>
+          <h4 class="fw-bold mb-0">What about bagged ice at the store?</h4>
+          <p>The key problems with bagged ice at the store are the price and the fact that many stores run out during the summer. By making ice onsite we don't need to stock or supply anything.</p>
         </div>
       </div>
     </div>
