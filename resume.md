@@ -27,7 +27,7 @@ I'm a Developer. Pure and simple, I want to be hands on and not in some kind of 
 * Wednesday's from 12:00 to 3:30 I volunteer at a local highschool teaching programming. If this is a problem, I'm not interested. 
 * $160,000 salary minimum or $100 an hour 1099 or $80 an hour W2 contract
 * Remote -- nothing onsite, no traveling, no first x days / weeks on site to prove myself
-** I will consider a hybrid role in the Denver market- but I gotta still be able to work from the coffee shop or the mountains! 
+* Hybrid -- I will consider a hybrid role in the Denver market- but I gotta still be able to work from the coffee shop or the mountains! 
 
 <h1><a href="/assets/resume/AdamBourg.pdf">CLICK HERE FOR THE PDF VERSION</a></h1> 
 
