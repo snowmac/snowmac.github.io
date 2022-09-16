@@ -5,7 +5,7 @@ date: 2022-09-16
 categories: mentoring
 --- 
 
-I want you to meet <a href="https://www.linkedin.com/in/roc-taylor/" target="_blank">Roc</a>. He's my new friend and mentee, I found him through a semi virual LinkedIn Post and I told him to reach out to me. I was surprised when he did. He needs a job and a friend, I'm coaching him on what he should focus in and learn for his first job post bootcamp. If you want to hire him, please do. 
+I want you to meet <a href="https://www.linkedin.com/in/roc-taylor/" target="_blank">Roc</a>. He's my new friend and mentee, I found him through a semi viral LinkedIn Post and I told him to reach out to me. I was surprised when he did. He needs a job and a friend, I'm coaching him on what he should focus in and learn for his first job post bootcamp. If you want to hire him, please do. 
 
 He posted this <a href="https://www.linkedin.com/feed/update/urn:li:activity:6970811658537504768/" target="_blank">message on Linkedin</a> when I found him: 
 
