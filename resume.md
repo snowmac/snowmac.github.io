@@ -25,7 +25,6 @@ I'm a Developer. Pure and simple, I want to be hands on and not in some kind of 
 # Expectations
 * I work M-F, 8:30 to 4:30 MST; I don't work weekends, I don't death march. If you do, you can go ahead and close this tab. 
 * Wednesday's from 12:00 to 3:30 I volunteer at a local highschool teaching programming. If this is a problem, I'm not interested. 
-* $160,000 salary minimum or $100 an hour 1099 or $80 an hour W2 contract
 * Remote -- nothing onsite, no traveling, no first x days / weeks on site to prove myself
 * Hybrid -- I will consider a hybrid role in the Denver market- but I gotta still be able to work from the coffee shop or the mountains! 
 
