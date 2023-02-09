@@ -13,18 +13,19 @@ layout: default
 I'm a Developer. Pure and simple, I want to be hands on and not in some kind of middle management role. If you have a role that is 80% or more focused on development, architecture, building stuff or tackling technical issues; I'm very interested. If you're looking for a manager to manage a technical team with little to no hands on work: I'm not interested. 
 
 # Tech Stack 
-
 * Currently on NodeJS and React
-* Have worked with Apollo, Typescript and no SQL
-* Extensive Postgres experience
+* Have worked with Apollo, Typescript and MongoDB
+* Extensive PostgresSQL experience
 * Would be open to a Rails and Ruby role (5 years experience, 5 years ago) 
 * Really strong in CSS, SQL and HTML 
 * Worked with Azure & AWS
 * Not really a kuberentes or docker guy; I've used docker, but I haven't set that stuff up before
+* Open to working on other languages and tech stacks such as Python, Java, Elixir etc... 
+* I'm a Unix / Linux / Mac guy; I don't do any development on Windows 
 
 # Expectations
-* I work M-F, 8:30 to 4:30 MST; I don't work weekends, I don't death march. If you do, you can go ahead and close this tab. 
-* Wednesday's from 12:00 to 3:30 I volunteer at a local highschool teaching programming. If this is a problem, I'm not interested. 
+* I work M-F, normal business hours; I don't work weekends, I don't death march. If you do, you can go ahead and close this tab. 
+* I pick have to leave to get my kid from school around 2:45-3, then I'm typically back online not long after that 
 * Remote -- nothing onsite, no traveling, no first x days / weeks on site to prove myself
 * Hybrid -- I will consider a hybrid role in the Denver market- but I gotta still be able to work from the coffee shop or the mountains! 
 
