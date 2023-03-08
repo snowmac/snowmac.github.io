@@ -3,20 +3,22 @@ layout: default
 ---
 
 # Resume
-
-<p>Welcome to my resume page. Here you will find a copy of my resume as a <a href="/assets/resume/AdamBourg.pdf">PDF</a> and a <a href="/assets/resume/AdamBourg.docx">Word</a> document. Why not an HTML version? All good programmers avoid unnecessary work when possible :-)</p>
+<p>Welcome to my resume page. Here you will find a copy of my resume as a <a href="/assets/resume/AdamBourg.pdf">PDF</a>. Why not an HTML version? All good programmers avoid unnecessary work when possible :-)</p>
 
 <p>It's the latest resume, I keep it updated. It's much easier to respond to an email of "Let me see your resume. Sure, here's adambourg.com/resume", then send over a PDF/Word doc, especially on a mobile device.</p>
 
 # Next role / what I'm looking for
-
 I'm a Developer. Pure and simple, I want to be hands on and not in some kind of middle management role. If you have a role that is 80% or more focused on development, architecture, building stuff or tackling technical issues; I'm very interested. If you're looking for a manager to manage a technical team with little to no hands on work: I'm not interested. 
+
+# Salary or contract rates
+I expect a salary of $185,000 or more with time off and benefits; if we're doing a 1099 contract my rate is $115 an hour, $95 an hour for W2. Yes it's $20 more an hour for me to be independent. Which includes additional effort in the admin department, which I hate, so I make it worth my energy. :) 
+
+These rates are not open for negotiation unless you want to pay me more money. 
 
 # Tech Stack 
 * Currently on NodeJS and React
 * Have worked with Apollo, Typescript and MongoDB
 * Extensive PostgresSQL experience
-* Would be open to a Rails and Ruby role (5 years experience, 5 years ago) 
 * Really strong in CSS, SQL and HTML 
 * Worked with Azure & AWS
 * Not really a kuberentes or docker guy; I've used docker, but I haven't set that stuff up before
@@ -31,4 +33,3 @@ I'm a Developer. Pure and simple, I want to be hands on and not in some kind of 
 
 <h1><a href="/assets/resume/AdamBourg.pdf">CLICK HERE FOR THE PDF VERSION</a></h1> 
 
-<h1><a href="/assets/resume/AdamBourg.docx">CLICK HERE FOR THE WORD VERSION</a></h1> 
