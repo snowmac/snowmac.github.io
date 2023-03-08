@@ -10,6 +10,11 @@ layout: default
 # Next role / what I'm looking for
 I'm a Developer. Pure and simple, I want to be hands on and not in some kind of middle management role. If you have a role that is 80% or more focused on development, architecture, building stuff or tackling technical issues; I'm very interested. If you're looking for a manager to manage a technical team with little to no hands on work: I'm not interested. 
 
+# What I'm not looking for
+I'm looking to stay away from the enterprise architecture roles that mostly involve spreadsheets, diagrams, planning and evulation. I've done that job and it's soul crushing to me. I am a code slinger. I build stuff and I build it very well. I also am staying away from management or advisory roles. If someone in your reporting structure has a similar job to this one and they spend more then 50% of their time on meetings, please just pass on my resume. 
+
+Please be honest. I've had hiring managers hire me for job x and give me job y then wonder why I'm constantly struggling with motivation and depression. I don't do good work under those conditions. Spare us both the trouble and hire me for a job that actually results in building something. Don't hire me to build your vision from a high level, hand wavy way for the next 2 years before we sit down to write code. 
+
 # Salary or contract rates
 I expect a salary of $185,000 or more with time off and benefits; if we're doing a 1099 contract my rate is $115 an hour, $95 an hour for W2. Yes it's $20 more an hour for me to be independent. Which includes additional effort in the admin department, which I hate, so I make it worth my energy. :) 
 
