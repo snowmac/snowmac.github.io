@@ -1,11 +1,9 @@
 ---
 layout: post
-title: "writers block"
+title: "Writers block"
 date: 2023-03-10
 categories: writers_block not_sure_what_to_say
 ---
-
-# Writers block
 
 I should be doing something other then writing a blog post, I could be doing anything but I want to say something. The trouble is I don't know what to say. Over the last year I've started but not finished over a half a dozen blog posts. I've lost the desire to complete the posts and get it out. So, I'm going to break that spell today. I will publish this post, even if its a crappy post. 
 
@@ -14,9 +12,9 @@ I should be doing something other then writing a blog post, I could be doing any
 There is a lot going on actually, I've been very busy. 
 
 Career: 
-* I quit my PwC job and started working for Beachbody
+* I quit my PwC job and started working for a new company
     * I left PwC after a really bad review where the manager blamed the project failures (his failures) on me just after I converted to FTE as a newly minted manager 
-* Beachbody has been really rocky
+* The new company has been really rocky
     * I was expecting a transition, I've been at PwC so long, that I expected adjusting to a new company to be hard, just not this hard. In the first 3 months, I was ignored by new team members, shuffled around, work assigned, work taken away, and generally not sure what to do day after day. 
     * I'm still lost and I can't get my management team to define goals, responsibilities and expectations
     * I like the company, mission and they have given me a lot of free product (I got a bike, lots of shakeology and other shawg) 
