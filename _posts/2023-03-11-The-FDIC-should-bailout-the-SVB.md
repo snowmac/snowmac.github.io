@@ -30,7 +30,7 @@ I see a lot of people online saying, let it burn, let the bank fail. I agree, le
 
 If the failed bank cascades into companies not making payroll, I predict that the US will face a depression similar to the great depression or worse. I promise it will not be good for the US as a whole. 
 
-If the failed bank is resolved and companies can access their funds, it will trigger political backlash from all sides to whoever is in charge at the time and that it will lead to temporary changes in policy. I do not see long term changes in effect in a situation where the integrity is maintained. 
+If the failed bank is resolved and companies can access their funds, it will trigger political backlash from all sides to whoever is in charge at the time and that it will lead to temporary changes in policy. I do not see long term changes in effect in a situation where the integrity is maintained. -- Some a**hole will do something shady in 5-15 years and screw everyone over again. 
 
 # Should this change how I manage my own money? 
 
