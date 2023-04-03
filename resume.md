@@ -3,7 +3,7 @@ layout: default
 ---
 
 # Resume
-<p>Welcome to my resume page. Here you will find a copy of my resume as a <a href="/assets/resume/AdamBourg.pdf">PDF</a>. Why not an HTML version? All good programmers avoid unnecessary work when possible :-)</p>
+<p>Welcome to my resume page. Here you will find a copy of my resume as a <a href="/assets/resume/AdamBourg.docx">Word File</a>.</p>
 
 <p>It's the latest resume, I keep it updated. It's much easier to respond to an email of "Let me see your resume. Sure, here's adambourg.com/resume", then send over a PDF/Word doc, especially on a mobile device.</p>
 
@@ -14,11 +14,6 @@ I'm a Developer. Pure and simple, I want to be hands on and not in some kind of 
 I'm looking to stay away from the enterprise architecture roles that mostly involve spreadsheets, diagrams, planning and evulation. I've done that job and it's soul crushing to me. I am a code slinger. I build stuff and I build it very well. I also am staying away from management or advisory roles. If someone in your reporting structure has a similar job to this one and they spend more then 50% of their time on meetings, please just pass on my resume. 
 
 Please be honest. I've had hiring managers hire me for job x and give me job y then wonder why I'm constantly struggling with motivation and depression. I don't do good work under those conditions. Spare us both the trouble and hire me for a job that actually results in building something. Don't hire me to build your vision from a high level, hand wavy way for the next 2 years before we sit down to write code. 
-
-# Salary or contract rates
-I expect a salary of $185,000 or more with time off and benefits; if we're doing a 1099 contract my rate is $115 an hour, $95 an hour for W2. Yes it's $20 more an hour for me to be independent. Which includes additional effort in the admin department, which I hate, so I make it worth my energy. :) 
-
-These rates are not open for negotiation unless you want to pay me more money. 
 
 # Tech Stack 
 * Currently on NodeJS and React
@@ -32,9 +27,9 @@ These rates are not open for negotiation unless you want to pay me more money.
 
 # Expectations
 * I work M-F, normal business hours; I don't work weekends, I don't death march. If you do, you can go ahead and close this tab. 
-* I pick have to leave to get my kid from school around 2:45-3, then I'm typically back online not long after that 
+* I have to leave to get my kid from school around 2:45-3, then I'm typically back online not long after that 
 * Remote -- nothing onsite, no traveling, no first x days / weeks on site to prove myself
-* Hybrid -- I will consider a hybrid role in the Denver market- but I gotta still be able to work from the coffee shop or the mountains! 
+* Hybrid -- I will consider a hybrid role in the Denver market
 
-<h1><a href="/assets/resume/AdamBourg.pdf">CLICK HERE FOR THE PDF VERSION</a></h1> 
+<h1><a href="/assets/resume/AdamBourg.docx">CLICK HERE FOR THE WORD VERSION</a></h1> 
 
