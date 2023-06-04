@@ -4,8 +4,9 @@ title: "happy pride month"
 date: 2023-06-04
 categories: pride lgbtqa
 ---
-
+ 
 To all my amazing friends, whether you're in or out of the closet, I want to wish you a heartfelt Happy Pride Month! As we celebrate LGBTQA+ in the USA and beyond, I would like to take a moment to share why supporting gay rights is important to me.
+
 
 # Understanding and Growth
 
