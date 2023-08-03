@@ -40,10 +40,6 @@
   linear-gradient(red 0 16.66%, orange 0 33.33%, yellow 0 50%, green 0 66.66%, blue 0 83.33%, indigo 0);
 }
 
-.project-name {
-  background: rgb(0,0,0); 
-}
-
 .page-header {
   background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
   text-align:center;
@@ -106,4 +102,8 @@
   h1 {
     font-size:24px;
   }
+}
+
+.page-header{
+    padding:0!important; 
 }
