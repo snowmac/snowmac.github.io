@@ -25,7 +25,11 @@
   <body>
     <header class="page-header" role="banner">
 <!--Content before waves-->
-
+<div class="inner-header flex">
+  <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+  <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+  </div>
+  
   <!--Waves Container-->
   <div>
   <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
