@@ -36,11 +36,12 @@ The east side system has 4 major zones:
 # How do I get timing right with a zone inside another zone using 2 timers?
 
 Here's the timing table for the main timer from the facet:
-| Zone | Duration | Scheduled Time | Role Description | Frequency |
-| ---- | ---------- | -------------- | -------------- | --------- |
-| 1 | 30 minutes | 7:30 am | The west side of the yard's 2 sprinklers for the watering of the grass | MWFS |
-| 2 | 90 minutes | 5:15 am | The primary timer zone for the east zone, so we can water the other sub zones | Daily |
-| 2 | 30 minutes | 8:30 pm | The east side has a drip timer for just the raised garden beds to ensure enough water | Daily |
+
+| Zone | Duration   | Scheduled Time | Role Description                                                                      | Frequency |
+| ---- | ---------- | -------------- | ------------------------------------------------------------------------------------- | --------- |
+| 1    | 30 minutes | 7:30 am        | The west side of the yard's 2 sprinklers for the watering of the grass                | MWFS      |
+| 2    | 90 minutes | 5:15 am        | The primary timer zone for the east zone, so we can water the other sub zones         | Daily     |
+| 2    | 30 minutes | 8:30 pm        | The east side has a drip timer for just the raised garden beds to ensure enough water | Daily     |
 
 Here's the timing table for the east side:
 
