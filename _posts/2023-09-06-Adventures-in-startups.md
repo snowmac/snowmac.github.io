@@ -60,3 +60,7 @@ A great example of something we did well is we used <a href="https://www.propela
 Someone has the same idea as you. They will solve it in a similar way, they will raise money, they will get customers, they will likely be successful but so can you. If the idea is sound, the model is solid and the execution is good, you can and will find customers, investors and partners. If there's no competition in the market, either you've found an island where there is gold to be found, are brand new to the market (AI or Crypto for example) or have not looked hard enough. Competitors exist. That's a good thing. Someone will hate your solution and they will love your competitor. Someone will hate your competitor and love you. Deal with it.
 
 Time to market is important but if your success depends on getting the application done yesterday, investment done last week and customers a month ago, did you really have a reasonable shot at success? I doubt the cards are that stacked against you. It's ok to take some time, not to much (see lesson 7). Relax it's a marathon not a sprint.
+
+# Lesson 10: You will be dead in 100 years
+
+<a href="http://www.adambourg.com/interesting/not-mine/2023/08/28/we-will-all-be-dead-soon.html" target="_blank">You will be dead in 100 years, what does the work you do today matter in the long run? </a>
