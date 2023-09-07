@@ -23,31 +23,31 @@ This was really stupid in hindsight. We offered to hire people at $30-50 an hour
 
 If you need help, offer equity. Never promise salaries, hourly pay or anything like that. It will cost you.
 
-"But Adam, We're a C Corp!" -- It does not matter, in issues of payroll, I've had 3 attorneys tell me that payroll issues pierce the corporate veil. In the case of co founders, it means joint and several liability. Basically of John Doe, your partner can't pony up any money, you have to pony up all of it. Sucks to be you, right? You where the guy to build everything, they brought an intern to do who knows what, then they bail and leave you owing the itern, no sales and fight you for equity. See lesson 1.
+"But Adam, We're a C Corp!" -- It does not matter, in issues of payroll, I've had 3 attorneys tell me that payroll issues pierce the corporate veil. In the case of co founders, it means joint and several liability. Basically of John Doe, your partner can't pony up any money, you have to pony up all of it. Sucks to be you, right? You where the guy to build everything, they brought an intern to do who knows what, then they bail and leave you owing the intern, no sales and then fight you for equity/compensation whatever. To avoid, see my lesson 1.
 
 # Lesson 3: Use an ORM
 
-I did not use an ORM. I wrote all the SQL by hand, because I was a bad ass. I wrote joins, I wrote group bys, I let the DB do it's job. What happened? Diaster, updates didnt' work, migrations exist for a reason. Data Models are great. ORMs allow you to more rapidly change the data model without having to re-write significant amounts of code. Stop being a know it all and use a ORM.
+I did not use an ORM. I wrote all the SQL by hand, because I was a bad ass. I wrote joins, I wrote group bys, I let the DB do it's job. What happened? Diaster, updates didnt' work, keeping everything and everyone in sync sucked. Migrations exist for a reason. Data Models are great. ORMs allow you to more rapidly change the data model without having to re-write significant amounts of code. Stop being a know it all and use a ORM.
 
 # Lesson 4: Hire an attorney to review everything
 
-I did this after the fact and I learned that my founders agreement was garbage. I learned that most our filings and legal documents where full of holes and contradictions. Don't be cheap. Before you sign a thing, have someone with a law license that you pay money to review the document.
+I did this after the fact and I learned that my founders agreement was garbage. I learned that most our filings and legal documents where full of holes and contradictions. Don't be cheap. Before you sign a thing, have someone with a law license that you pay money to review the document, better yet pay them to write the document.
 
 # Lesson 5: Use cloud based tools
 
-I let one of our partner's concerns about security & privacy for cloud based tools force us to run everything in a private cloud. Yes we used an AWS instance, but you had to use a VPN (wiregaurd) to login, and nothing hosting on a public service in a private account was allowed. Not only did we have more trouble managing our work load, we often had issues with SSH keys, email's getting marked as spam, connection issues with the VPN and much more.
+I let one of our partner's concerns about security & privacy for cloud based tools force us to run everything in a private cloud. Yes we used an AWS instance, but you had to use a VPN (wiregaurd) to login, and nothing hosted on a public service in a private account was allowed. Not only did we have more trouble managing our work load, we often had issues with SSH keys, email's getting marked as spam, connection issues with the VPN and much more. Self hosted Git, Redmine, Apache, MySQL, Email and more.
 
 Use Trello, use Github or Bitbucket, use more then a cheap AWS instance, actually use RDS, CDK and other cloud resources. Not everyone will steal your IP.
 
 # Lesson 6: Make your product easily affordable without approval
 
-Yeah, enterprise customers exist, but ideally target in the $30-80 a month range Per XYZ. These types of purchases make it really easy for managers to swipe their company card without approval. Have multiple teirs but a basic product in this price range will pay the bills.
+Yeah, enterprise customers exist, but ideally target a price in the $30-80 a month range Per XYZ. These types of purchases make it really easy for managers to swipe their company card without approval. Have multiple teirs but a basic product in this price range will pay the bills, validate your idea and give you time to grow.
 
 # Lesson 7: Perfect is the enemy of done
 
 I saw this in a friend, they spent 10 years building the perfect JS framework, then another 10 years perfecting it and released it to lackluster fare. They fought to make their product perfect and cover every single possible usecase. The trouble is, as you feature creep, you lose the ability to test if the market actually will pay for your product.
 
-With my startup first it was an MVP, then it was a really complicated AI feature that had to be perfect (Still in progress), then refinements to our core product, then a bunch of other new features before we could really approach investors or customers.
+With my startup first it was an MVP, then it was a really complicated AI feature that had to be perfect (Still in progress), then refinements to our core product, then a bunch of other new features before we could really approach investors or customers. We had a kick ass demo and a really nice product, but no sales, no investment. Just slick stuff.
 
 Fail early, fail often. Test your ideas, just like <a href="https://theleanstartup.com" target="_blank">The Lean Startup</a>.
 
