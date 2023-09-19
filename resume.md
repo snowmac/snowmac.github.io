@@ -17,10 +17,13 @@ layout: default
   margin-bottom: 10px;
 }
 
+  .title, .dates {
+      display: inline; 
+  }
+
 .dates {
   font-style: italic;
   color: #777;
-  display: inline; 
   float:right; 
 }
 
