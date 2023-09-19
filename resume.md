@@ -2,6 +2,53 @@
 layout: default
 ---
 
+<style>
+.section {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dates {
+  font-style: italic;
+  color: #777;
+}
+
+.company {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.education .description {
+  list-style-type: none;
+  font-weight: bold;
+}
+
+.education .company {
+  font-weight: normal;
+}
+
+.education .title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}  
+</style>
+
 
 <section id="personal_details">
 <h1>Adam Bourg</h1>
