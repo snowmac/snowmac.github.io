@@ -3,7 +3,7 @@ layout: default
 ---
 
 <style>
-.experience {
+section {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -53,16 +53,6 @@ layout: default
   margin-bottom: 10px;
 }  
 </style>
-
-
-<section id="personal_details">
-<h1>Adam Bourg</h1>
-<ul>
-  <li>Denver, Colorado 80241</li>
-  <li>Adam.Bourg@gmail.com</li>
-  <li>(720) 491-0562</li>
-</ul>
-</section>
 
 <h1>Professional Experience</h1> <hr /> 
 
