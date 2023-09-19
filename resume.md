@@ -54,7 +54,7 @@ section {
 }  
 </style>
 
-<h1>Professional Experience</h1> <hr /> 
+<h1>Professional Experience</h1>
 
 <section class="experience">
   <div class="title">Senior Software Engineer</div>
