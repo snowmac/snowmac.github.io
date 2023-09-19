@@ -3,7 +3,7 @@ layout: default
 ---
 
 <style>
-section {
+.experience {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -20,6 +20,8 @@ section {
 .dates {
   font-style: italic;
   color: #777;
+  display: inline; 
+  float:right; 
 }
 
 .company {
