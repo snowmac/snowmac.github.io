@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Using Chatgpt to write SQL"
-date:   2023-11-30
+title: "Using Chatgpt to write SQL"
+date: 2023-11-30
 categories: chatgpt sql 
 ---
 
