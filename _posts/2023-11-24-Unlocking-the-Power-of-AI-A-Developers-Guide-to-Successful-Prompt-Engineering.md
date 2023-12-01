@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Unlocking the Power of AI: A Developers Guide to Successful Prompt Engineering"
-date: 2023-11-24
+date: 2023-11-30
 categories: ai engineering
 ---
 
