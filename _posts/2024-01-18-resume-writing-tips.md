@@ -42,7 +42,11 @@ Brought over a dozen legacy projects up to date in libraries, frameworks, and se
 
 # Focus point 3: Don’t make up information
 
-Sell yourself? Yes. Lie? No. You need to be truthful in your bullet points. Don’t make up stuff. If you can’t talk about specific measurable results, but you need something, talk about what you did, why it was important. For example, I can’t easily measure the compliance utilization of the platform. I know eventually everyone will use the compliance tool, but that’s not really a measurable or reportable outcome. It didn’t result in more income or sales, just made sure if we got sued, we’re covered, so a bullet like this is acceptable: “Built a compliance tool to track contracts and agreements signed between the firm and all their contracted service providers.”. I can also report on testing I did and a mitigation plan I created: “Conducted extensive scalability testing and mitigation to ensure the application can grow by 10x users” 
+Sell yourself? Yes. Lie? No. You need to be truthful in your bullet points. Don’t make up stuff. If you can’t talk about specific measurable results, but you need something, talk about what you did, why it was important. For example, I can’t easily measure the compliance utilization of the platform. I know eventually everyone will use the compliance tool, but that’s not really a measurable or reportable outcome. It didn’t result in more income or sales, just made sure if we got sued, we’re covered, so a bullet like this is acceptable: 
+* “Built a compliance tool to track contracts and agreements signed between the firm and all their contracted service providers.”. 
+
+I can also report on testing I did and a mitigation plan I created: 
+* “Conducted extensive scalability testing and mitigation to ensure the application can grow by 10x users” 
 
 # Focus point 4: Have a professional summary at the to
 
