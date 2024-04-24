@@ -32,17 +32,16 @@ As a whole, this is the breakdown from least to most risky investments you can m
 # AI Stocks
 
 Below is the list of companies I'm interested in purchasing in my 401ks and IRAs.
-| Stock | Price | Justification |
-| --------- | ------- | ------------- |
-| AMD | $151.65 | Current market leader with the best in class next to Nvidia. They make great AI hardware |
-| Intel | $34.42 | Currently working on a market ready chip to compete with AMD. Long time in the 90s and 00s they were the market leader in semiconductors |
-| Microsoft | $409.21 | They own a large chunk of open AI and are integrating it into the Azure Cloud Platform, MS 360 and more. Going all in on AI software services |
-| Nvidia | $824.23 | The designers of the H100 Tensor GPU. Presold through 2025 to big companies like Facebook. The best in class AI chipest designer |
-| TSMC | $783.00 | They build the actual hardware that Nvidia and others design |
-| Google | $159.92 | They are a leading cloud provider and they have been building Gemini, their answer to OpenAI and Facebook's Llama. |
-| Amazon | $179.54 | I bought them when did their 20-1 stock split in 2022. I bought like 10 shares for $124 a share. Now 2 years later, they are up $50 a share. A solid but small $500 profit. I'm holding them. With AWS and like microsoft and Google are building tools for AI. I think this is a good buy.
-| Datadog | $127.07 | I bought these guys on a whim. But they do data analytics and monitoring. They're very niche in the tech market. SaaS platform. They are beginning to roll AI out and I could see them becoming a bigger player in their space. |
-| Micron | $111.33 | These guys design and make semiconductors and are working on their own AI chips to compete with Nvidia and AMD. One of my college friends who pratically dragged me through two very hard computer science classes, who literally helped me pass those classes works for these guys. They hire brillant and talented engineers. |
+
+- AMD - $151.65: Current market leader with the best in class next to Nvidia. They make great AI hardware
+- Intel - $34.42: Currently working on a market ready chip to compete with AMD. Long time in the 90s and 00s they were the market leader in semiconductors
+- Microsoft- $409.21: They own a large chunk of open AI and are integrating it into the Azure Cloud Platform, MS 360 and more. Going all in on AI software services
+- Nvidia - $824.23: The designers of the H100 Tensor GPU. Presold through 2025 to big companies like Facebook. The best in class AI chipest designer
+- TSMC - $783.00: They build the actual hardware that Nvidia and others design
+- Google - $159.92: They are a leading cloud provider and they have been building Gemini, their answer to OpenAI and Facebook's Llama.
+- Amazon - $179.54: I bought them when did their 20-1 stock split in 2022. I bought like 10 shares for $124 a share. Now 2 years later, they are up $50 a share. A solid but small $500 profit. I'm holding them. With AWS and like microsoft and Google are building tools for AI. I think this is a good buy.
+- Datadog - $127.07: I bought these guys on a whim. But they do data analytics and monitoring. They're very niche in the tech market. SaaS platform. They are beginning to roll AI out and I could see them becoming a bigger player in their space.
+- Micron - $111.33: These guys design and make semiconductors and are working on their own AI chips to compete with Nvidia and AMD. One of my college friends who pratically dragged me through two very hard computer science classes, who literally helped me pass those classes works for these guys. They hire brillant and talented engineers.
 
 Why buy in 401ks and IRAs? Tax advantages and not to mention I'm 34. If these things soar, they are in an account where I won't be taxed for 30 more years and I can capitalize on their gains. If they crash and burn? Well, I have 30 years to rebuild and grow beyond what I lose. I had a bunch of money invested in a Vangaurd IT fund that I sold and bought holdings in Nvidia, Datadog, Microsoft, AMD and Intel.
 
