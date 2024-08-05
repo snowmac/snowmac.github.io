@@ -30,7 +30,7 @@ The world is spinning out of control. From my post above, events are progressing
 
 So many people are getting wrapped up in politics, Donald Trump, oh so and so group hates this other group. All this noise. It's just a distraction.
 
-What do you believe about Jesus Christ?
+# What do you believe about Jesus Christ?
 
 * Was he a crazy guy with some good moral lessons?
 * He's a fairy tale made up by 12 dudes (Like watergate!) -- nothing to see here, lets move along
