@@ -8,19 +8,19 @@ categories: life technology wars
 Have you noticed that the technology of the world is rapidly growing, we went from horses and buggies in 1890s to super sonic jet airplanes by the 1970s. Since 1970 we've seen a massive increase of technology from airplanes, cars, the internet and medicine. We've got vaccines based off of custom engineered MRNA strands to kill viruses-how neat is that!
 
 Have you lived through history making event, after history making event after history making event? Think about it from an US perspective:
--The attacks on 9/11/2001
--Anthrax and DC Sniper Shooter
--Afghan war
--Iraq wars
--Crash of 2008/2009
--So many school shootings
--First African American President (Obama)
--Covid 19
--Las Vegas Mass shooting, movie theater mass shooting
--2020 failed insurrection
--2021 invasion of Ukraine by Russia
--Failed Trump assassination attempt
--Russia moving equipment back to Cuba (Cuban missile crisis all over again?)
+* The attacks on 9/11/2001
+* Anthrax and DC Sniper Shooter
+* Afghan war
+* Iraq wars
+* Crash of 2008/2009
+* So many school shootings
+* First African American President (Obama)
+* Covid 19
+* Las Vegas Mass shooting, movie theater mass shooting
+* 2020 failed insurrection
+* 2021 invasion of Ukraine by Russia
+* Failed Trump assassination attempt
+* Russia moving equipment back to Cuba (Cuban missile crisis all over again?)
 
 I could go on and on. But I won't.
 
@@ -32,9 +32,9 @@ So many people are getting wrapped up in politics, Donald Trump, oh so and so gr
 
 What do you believe about Jesus Christ?
 
--Was he a crazy guy with some good moral lessons?
--He's a fairy tale made up by 12 dudes (Like watergate!) -- nothing to see here, lets move along
--He died, Rose in 3 days and is Lord of all creation
+* Was he a crazy guy with some good moral lessons?
+* He's a fairy tale made up by 12 dudes (Like watergate!) -- nothing to see here, lets move along
+* He died, Rose in 3 days and is Lord of all creation
 
 # Aren't you freaked out?
 No. I'm not afraid. I was in 2020, but so much has changed in my life.
@@ -53,6 +53,6 @@ How can I have hope and peace? By trusting in the Prince of Peace - Jesus Christ
 
 The bible says if you repent, confess with you mouth that "Jesus is Lord" and believe in your heart that God raised him from the dead, you will be saved.
 
-PRAY RIGHT NOW:
+# PRAY RIGHT NOW:
 
 “Dear Lord Jesus, I know I am a sinner. I believe You died for my sins. Right now, I turn from my sins and open the door of my heart and life. I confess You as my personal Lord and Savior. Thank You for saving me. Amen.”
