@@ -47,168 +47,60 @@ Now we target the `segments-container` element by its ID. If it’s not found, w
 - `\s+` collapses multiple spaces into a single space.
 - A final `trim()` ensures no stray whitespace at the start or end.
 
-### Step 6: Copying to the Clipboard 📋
+### Step 6: Error Handling 🛡️
 
-The cleaned text gets copied to the clipboard using `navigator.clipboard.writeText()`. We log a success message if it works or an error if it fails (e.g., due to a non-secure context like HTTP). The text is also returned to the console for manual copying if needed.
-
-### Step 7: Error Handling 🛡️
-
-The script is wrapped in `try-catch` blocks at every step to keep things smooth. If the "...more" element fails or is missing, we proceed to “Show transcript.” If that fails, we still try to grab the text. This ensures we get as far as possible, even on quirky pages.
+If the "...more" element fails or is missing, we proceed to “Show transcript.” If that fails, we still try to grab the text. This ensures we get as far as possible, even on quirky pages.
 
 ## The Code
 
 Below is the full script. It’s an Immediately Invoked Function Expression (IIFE), so it runs the moment you paste it into your browser’s console. Just open a YouTube video, paste this in the console, and the cleaned transcript will be copied to your clipboard, ready for AI summarization.
 
 ```javascript
-(function cleanSegmentsText() {
-  try {
-    const moreElement = Array.from(document.querySelectorAll("*")).find(
-      (el) => el.textContent.trim() === "...more" && el instanceof HTMLElement
-    );
-    if (moreElement) {
-      moreElement.click();
-      console.log('Clicked the "...more" element');
-    } else {
-      console.warn('Element with text "...more" not found, proceeding to next step');
-    }
-    setTimeout(() => {
-      try {
-        const transcriptElement = Array.from(document.querySelectorAll('[aria-label="Show transcript"]')).find(
-          (el) => el instanceof HTMLElement
-        );
-        if (transcriptElement) {
-          transcriptElement.click();
-          console.log('Clicked the "Show transcript" element');
-        } else {
-          console.warn('Element with aria-label="Show transcript" not found, proceeding to extract text');
-        }
-        setTimeout(() => {
-          try {
-            const container = document.getElementById("segments-container");
-            if (!container) {
-              console.error('Element with id "segments-container" not found, cannot extract text');
-              return "";
-            }
-            const text = container.textContent
-              .trim()
-              .replace(/[\n\r0-9:]+/g, "")
-              .replace(/\s+/g, " ")
-              .trim();
-            navigator.clipboard
-              .writeText(text)
-              .then(() => {
-                console.log("Text copied to clipboard successfully!");
-              })
-              .catch((err) => {
-                console.error("Failed to copy text to clipboard:", err.message);
-              });
-            return text;
-          } catch (err) {
-            console.error("Error extracting or cleaning text from segments-container:", err.message);
-            return "";
-          }
-        }, 1000);
-      } catch (err) {
-        console.warn('Error clicking "Show transcript" element:', err.message, "Proceeding to extract text");
-        setTimeout(() => {
-          try {
-            const container = document.getElementById("segments-container");
-            if (!container) {
-              console.error('Element with id "segments-container" not found, cannot extract text');
-              return "";
-            }
-            const text = container.textContent
-              .trim()
-              .replace(/[\n\r0-9:]+/g, "")
-              .replace(/\s+/g, " ")
-              .trim();
-            navigator.clipboard
-              .writeText(text)
-              .then(() => {
-                console.log("Text copied to clipboard successfully!");
-              })
-              .catch((err) => {
-                console.error("Failed to copy text to clipboard:", err.message);
-              });
-            return text;
-          } catch (err) {
-            console.error("Error extracting or cleaning text from segments-container:", err.message);
-            return "";
-          }
-        }, 1000);
-      }
-    }, 3000);
-  } catch (err) {
-    console.warn('Error clicking "...more" element:', err.message, "Proceeding to next step");
-    setTimeout(() => {
-      try {
-        const transcriptElement = Array.from(document.querySelectorAll('[aria-label="Show transcript"]')).find(
-          (el) => el instanceof HTMLElement
-        );
-        if (transcriptElement) {
-          transcriptElement.click();
-          console.log('Clicked the "Show transcript" element');
-        } else {
-          console.warn('Element with aria-label="Show transcript" not found, proceeding to extract text');
-        }
-        setTimeout(() => {
-          try {
-            const container = document.getElementById("segments-container");
-            if (!container) {
-              console.error('Element with id "segments-container" not found, cannot extract text');
-              return "";
-            }
-            const text = container.textContent
-              .trim()
-              .replace(/[\n\r0-9:]+/g, "")
-              .replace(/\s+/g, " ")
-              .trim();
-            navigator.clipboard
-              .writeText(text)
-              .then(() => {
-                console.log("Text copied to clipboard successfully!");
-              })
-              .catch((err) => {
-                console.error("Failed to copy text to clipboard:", err.message);
-              });
-            return text;
-          } catch (err) {
-            console.error("Error extracting or cleaning text from segments-container:", err.message);
-            return "";
-          }
-        }, 1000);
-      } catch (err) {
-        console.warn('Error clicking "Show transcript" element:', err.message, "Proceeding to extract text");
-        setTimeout(() => {
-          try {
-            const container = document.getElementById("segments-container");
-            if (!container) {
-              console.error('Element with id "segments-container" not found, cannot extract text');
-              return "";
-            }
-            const text = container.textContent
-              .trim()
-              .replace(/[\n\r0-9:]+/g, "")
-              .replace(/\s+/g, " ")
-              .trim();
-            navigator.clipboard
-              .writeText(text)
-              .then(() => {
-                console.log("Text copied to clipboard successfully!");
-              })
-              .catch((err) => {
-                console.error("Failed to copy text to clipboard:", err.message);
-                console.log(text);
-              });
-            return text;
-          } catch (err) {
-            console.error("Error extracting or cleaning text from segments-container:", err.message);
-            return "";
-          }
-        }, 1000);
-      }
-    }, 3000);
+(function processYouTubeTranscript() {
+  // Timeout durations in milliseconds
+  const MORE_CLICK_TIMEOUT = 3000; // Wait after "...more" click
+  const TRANSCRIPT_CLICK_TIMEOUT = 1000; // Wait after "Show transcript" click
+
+  // Reusable function to clean text from a container
+  function cleanTextFromContainer(container) {
+    if (!container) return "";
+    return container.textContent
+      .trim()
+      .replace(/[\n\r0-9:]+/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
   }
+
+  // Click element with text "...more" if it exists
+  const moreElement = Array.from(document.querySelectorAll("*")).find(
+    (el) => el.textContent.trim() === "...more" && el instanceof HTMLElement
+  );
+  if (moreElement) {
+    moreElement.click();
+    console.log('Clicked "...more"');
+  } else {
+    console.warn('"...more" not found');
+  }
+
+  // Wait, then click element with aria-label="Show transcript"
+  setTimeout(() => {
+    const transcriptElement = document.querySelector('[aria-label="Show transcript"]');
+    if (transcriptElement) {
+      transcriptElement.click();
+      console.log('Clicked "Show transcript"');
+    } else {
+      console.warn('"Show transcript" not found');
+    }
+
+    // Wait, then extract and log text
+    setTimeout(() => {
+      const container = document.getElementById("segments-container");
+      const text = cleanTextFromContainer(container);
+      console.log(
+        text ? `Please summarize the following YouTube Transcript: ${text}` : "No text in segments-container"
+      );
+    }, TRANSCRIPT_CLICK_TIMEOUT);
+  }, MORE_CLICK_TIMEOUT);
 })();
 ```
 
