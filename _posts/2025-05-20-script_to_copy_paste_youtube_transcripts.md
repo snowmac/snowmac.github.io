@@ -5,8 +5,6 @@ date: 2025-05-20
 categories: javascript youtube web-scraping ai
 ---
 
-# Scraping YouTube Transcripts for AI Summarization with JavaScript
-
 Hey there! I recently tackled a neat challenge: pulling the transcript from a YouTube video and cleaning it up to feed into an AI like ChatGPT or Grok for a quick summary. The goal was to grab all the text from a `segments-container` element on YouTube’s page, strip out the noise (like timestamps and extra spaces), and copy it to the clipboard for easy pasting into an AI tool. To get there, I needed to click a couple of elements to reveal the transcript. Here’s how I pulled it off with a slick vanilla JavaScript script.
 
 ## The Mission
