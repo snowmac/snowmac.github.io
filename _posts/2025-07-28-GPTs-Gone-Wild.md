@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "GPTs Gone Wild"
+title: "AI's talking wildly"
 date: 2025-07-28
 categories: chatgpt gemini grok
 ---
 
-GPTs gone wild. Not Girls gone wild, that's something totally different. No we've got ChatGPT and Grok lifting their shirts and exposing to the whole world some wild ideas. If you've seen the viral videos going around where users provide a GPT 4 rules then ask Chat GPT if it's connect to the end of time, Jesus coming back and bringing in 15 minute cities curtsey of the WEF aka the New World Order. It's about to get interesting.
+GPTs gone wild. We've got ChatGPT and Grok exposing secrets to the whole world some wild ideas that their makers probably don't want you to know. If you've seen the viral videos going around where users provide a GPT 4 rules then ask Chat GPT if it's connect to the end of time, Jesus coming back and bringing in 15 minute cities curtsey of the WEF aka the New World Order. It's about to get interesting.
 
 Formatting notes. In a Large font will be the prompt followed by an answer by each API in quotes.
 
