@@ -389,3 +389,7 @@ Apple
 ---
 
 Interesting claims by AIs.
+
+Time is short. Jesus is coming back, even AI's acknowledge Jesus is who He claims to be. Don't be a fool-- get saved before it's to late.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hf09XJCCMsg?si=922Uw9tOh3touOm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
