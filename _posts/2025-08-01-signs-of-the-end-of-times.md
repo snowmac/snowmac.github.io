@@ -151,8 +151,9 @@ Currently the world has atleast <a href="a" target="blank">149</a> zettabytes on
 
 In 2023, Our world in data <a href="https://ourworldindata.org/technology-long-run" target="blank">published the below info graphic</a> about how much data has changed over the last 150 years. They said: "One insight I take away from this long-term perspective is how unusual our time is. Technological change was extremely slow in the past"
 
+<a href="/assets/img/end/tech-timeline.png" target="_blank">
 <img src="/assets/img/end/tech-timeline.png" style="max-width: 100%;height: auto;" />
-
+</a>
 Just look at AI -- that will be a seperate post.
 
 # Does this scare you?
