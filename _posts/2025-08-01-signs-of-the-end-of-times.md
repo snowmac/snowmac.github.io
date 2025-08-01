@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "signs of the end of times"
+title: "Signs of the end of times"
 date: 2025-08-01
 categories: end times theology bible prophecy
 ---
 
-Here are 10 reasons why I believe we are the last generation on earth before the tribulation. We are living in the last days, it's time to pick up your bibles and find people who don't know Jesus and mobilize. It's time to get uncomfortable and preach the gospel. This world needs to know the hope and love of Jesus before it's to late. This month, I'm going to do just that, take my bible and get infront of as many people as I can. Time is short. He is coming. Jesus is nearly here.
+Here are 10 reasons why I believe we are the last generation on earth before the tribulation. We are living in the last days, it's time to pick up your Bibles and find people who don't know Jesus and mobilize. It's time to get uncomfortable and preach the gospel. This world needs to know the hope and love of Jesus before it's to late. This month, I'm going to do just that, take my Bible and get infront of as many people as I can. Time is short. He is coming. Jesus is nearly here.
 
 # Increased weather disturbances
 
@@ -100,7 +100,9 @@ People love money, is that a surprise? Look at instagram, people are boasting of
 
 Abortion anyone? Since Roe vs wade was overturned just a few years ago, banning abortions in many states, it's still on the rise. <a href="https://www.theguardian.com/us-news/2025/jun/23/abortions-data-since-roe-wade" target="_blank">An 8% rise in abortions</a> from 2023 to 2024 -- a total of 1,140,000 babies were murdered in <a href="https://www.guttmacher.org/2024/03/despite-bans-number-abortions-united-states-increased-2023#:~:text=New%20findings%20from%20the%20Monthly,States%20in%20over%20a%20decade." target="_blank">2024</a> alone.
 
-Millions of children have been murdered by abortionists since Roe V. Wade, over 60 million since the court case. 60 million babies since 1973. About 1.2 million babies murdered every year.
+Millions of children have been murdered by abortionists since Roe V. Wade, over 60 million since 1973. Which is about 1.2 million babies murdered every year.
+
+Abortion is murder. I will stake my claim to that. It is evil, it is wrong, it is a form of worship to an idol. The idol of yourself, your image, your pride, your lifestyle or your inconvenience. Abortion is murder and the Lord HATES hands that shed innocent blood (Proverbs 6:17).
 
 > Do not give any of your children to be sacrificed to Molek, for you must not profane the name of your God. I am the Lord.
 
@@ -118,7 +120,7 @@ It's not just sex, but food, we're the fattest and heavist generation of all tim
 
 # Israel became a nation on May 14, 1948
 
-> <a href="https://www.biblegateway.com/passage/?search=Isaiah%2066%3A7-9&version=TLB" target="_blank">Isaiah 66:8</a> - Who has heard or seen anything as strange as this? For in one day, suddenly, a nation, Israel, shall be born, even before the birth pains come. In a moment, just as Israel’s anguish starts, the baby is born; the nation begins.
+> <a href="https://www.Biblegateway.com/passage/?search=Isaiah%2066%3A7-9&version=TLB" target="_blank">Isaiah 66:8</a> - Who has heard or seen anything as strange as this? For in one day, suddenly, a nation, Israel, shall be born, even before the birth pains come. In a moment, just as Israel’s anguish starts, the baby is born; the nation begins.
 
 Interesting, if you look at the data before, a lot of natural disasters really started to spike after 1950s. Interesting timing? I think not. Israel suddenly becoming a nation once again? It's been over 1000 years, why does Israel need to exist again? Why do the Jews need their homeland back? Well, God made them a promise and our God keeps his promises.
 
@@ -126,7 +128,7 @@ Notice that a nation was born before th BIRTH PAINs, the same thing spoken about
 
 # Knowledge and travel will increase
 
-> <a href="https://www.biblegateway.com/passage/?search=Daniel%2012%3A3-5&version=ESV" target="_blank">Daniel 12:4</a> - But you, Daniel, shut up the words and seal the book, until the time of the end. Many shall run to and fro, and knowledge shall increase.
+> <a href="https://www.Biblegateway.com/passage/?search=Daniel%2012%3A3-5&version=ESV" target="_blank">Daniel 12:4</a> - But you, Daniel, shut up the words and seal the book, until the time of the end. Many shall run to and fro, and knowledge shall increase.
 
 **Travel**
 
@@ -158,7 +160,7 @@ Just look at AI -- that will be a seperate post.
 
 # Does this scare you?
 
-If you're a Christian, fear not for our redemption is near as the bible says. If you don't know Jesus, then it's time to learn about Jesus. It's time you got saved.
+If you're a Christian, fear not for our redemption is near as the Bible says. If you don't know Jesus, then it's time to learn about Jesus. It's time you got saved.
 
 Don't be a fool-- get saved before it's to late.
 
