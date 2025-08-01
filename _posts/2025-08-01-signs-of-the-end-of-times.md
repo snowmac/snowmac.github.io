@@ -118,7 +118,7 @@ It's not just sex, but food, we're the fattest and heavist generation of all tim
 
 # Israel became a nation on May 14, 1948
 
-> <a href="https://www.biblegateway.com/passage/?search=Isaiah%2066%3A7-9&version=TLB" ="\_blank">Isaiah 66:8</a> - Who has heard or seen anything as strange as this? For in one day, suddenly, a nation, Israel, shall be born, even before the birth pains come. In a moment, just as Israel’s anguish starts, the baby is born; the nation begins.
+> <a href="https://www.biblegateway.com/passage/?search=Isaiah%2066%3A7-9&version=TLB" target="_blank">Isaiah 66:8</a> - Who has heard or seen anything as strange as this? For in one day, suddenly, a nation, Israel, shall be born, even before the birth pains come. In a moment, just as Israel’s anguish starts, the baby is born; the nation begins.
 
 Interesting, if you look at the data before, a lot of natural disasters really started to spike after 1950s. Interesting timing? I think not. Israel suddenly becoming a nation once again? It's been over 1000 years, why does Israel need to exist again? Why do the Jews need their homeland back? Well, God made them a promise and our God keeps his promises.
 
