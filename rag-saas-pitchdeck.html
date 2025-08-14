@@ -1,0 +1,321 @@
+---
+layout: blank
+title: RAG SaaS Pitch Deck
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        :root {
+            --primary-blue: #399edb;
+            --light-blue: #f0f8ff;
+            --dark-blue: #1a4d7d;
+            --slate-gray: #4b5563;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-blue);
+            color: var(--slate-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .pitch-deck {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        @media (min-width: 1024px) {
+            .pitch-deck {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .slide {
+            background: linear-gradient(145deg, #ffffff, #e0f2fe);
+            border: 1px solid var(--primary-blue);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.02);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--dark-blue);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .feature-card {
+            background-color: #f8fafc;
+            border-radius: 1rem;
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+        }
+        .feature-card svg, .feature-card .emoji {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--primary-blue);
+        }
+        .feature-card-text {
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .feature-card-text span {
+            font-weight: 400;
+            color: #64748b;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f8fafc;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .highlight {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 700;
+        }
+        .key-takeaway-item {
+            background-color: #f8fafc;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="pitch-deck">
+
+    <!-- Slide 1 -->
+    <div class="slide">
+        <div>
+            <h2>Product Overview & Competitive Edge</h2>
+            
+            <div class="section-title">Core Focus</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="feature-card-text">
+                        <p class="font-bold">Compliance-first</p>
+                        <span>HIPAA, PII, PCI, SOX</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5l6-6 6 6m4.5-4.5l-2.25 2.25-2.25-2.25m-12 9l2.25-2.25m2.25 2.25L12 18m-6-6l6 6m0-6l-6 6m6-6l6 6" />
+                    </svg>
+                    <div class="feature-card-text">
+                        <p class="font-bold">Flexible hosting</p>
+                        <span>Our cloud or your cloud</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 01-9-9c0-1.897.669-3.633 1.77-5.013M21 12c0-1.897-.669-3.633-1.77-5.013A9 9 0 0012 3m0 9v9m0-9H3m18 0h-3.375M12 12V3m0 9h3.375m0-9A9 9 0 0012 3m0 9v-9m0 9h-3.375m0 9A9 9 0 0112 21m0-9v-9m0 9h-3.375m3.375 0V21m-3.375-9H3m18 0h3.375m0 0v-9m0 9a9 9 0 01-9 9c-1.897 0-3.633-.669-5.013-1.77" />
+                    </svg>
+                    <div class="feature-card-text">
+                        <p class="font-bold">Marketplace ready</p>
+                        <span>Plug-and-play integrations (AWS first)</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-9h6m-9-3h18a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2z" />
+                    </svg>
+                    <div class="feature-card-text">
+                        <p class="font-bold">Frictionless onboarding</p>
+                        <span>Create account → Upload docs → Invite users</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">AI Differentiator</div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li><span class="font-bold">Pick your AI:</span> Use our premium accounts (OpenAI, Anthropic) or connect your own</li>
+                <li><span class="font-bold">Support for custom Hugging Face Transformers</span></li>
+                <li><span class="font-bold">Bring-your-own keys</span> or fully managed AI service</li>
+            </ul>
+
+            <div class="section-title">Premium Features</div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li><span class="font-bold">White labeling & branding</span></li>
+                <li><span class="font-bold">Mobile app</span></li>
+                <li><span class="font-bold">White-glove onboarding/support</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <div>
+            <h2>Competitive Positioning & Pricing</h2>
+            
+            <div class="section-title">Competitive Advantages Over Market</div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li><span class="font-bold">AI flexibility:</span> Competitors have fixed AI stacks; we allow BYO or managed AI.</li>
+                <li><span class="font-bold">Vector DB ownership:</span> Self-hosted or fully managed by us.</li>
+                <li><span class="font-bold">Broader compliance coverage</span> than most AI doc tools.</li>
+                <li><span class="font-bold">Faster onboarding</span> & easier integrations than governance-heavy compliance platforms.</li>
+                <li><span class="font-bold">Brand control</span> with white-labeling and mobile access.</li>
+            </ul>
+
+            <div class="section-title">Pricing Model</div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Monthly</th>
+                            <th>AI Option</th>
+                            <th>Target Users</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">Starter</td>
+                            <td>$149</td>
+                            <td>BYO AI only</td>
+                            <td>Small teams</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Pro</td>
+                            <td>$399–$519</td>
+                            <td>BYO or Our AI</td>
+                            <td>Mid-size orgs</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Enterprise</td>
+                            <td>$2,500+</td>
+                            <td>BYO or Our AI</td>
+                            <td>Large orgs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-title">AI Add-On Pricing</div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li><span class="font-bold">Our AI:</span> $20 (GPT-4o-mini) or $120 (GPT-4o) flat/month + token overages</li>
+                <li><span class="font-bold">Their AI:</span> $0 add-on; customer brings own keys</li>
+                <li><span class="font-bold">Overages:</span> GPT-4o-mini $0.50–$1/M tokens; GPT-4o $10–$12/M tokens</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <div>
+            <h2>Growth & Break-Even Economics</h2>
+            
+            <div class="section-title">Operating Plan</div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li><span class="font-bold">Months 1–12:</span> No salaries, ~$3K/month OpEx</li>
+                <li><span class="font-bold">Month 13 onward:</span> 2-person dev/sales team at ~$25K/month OpEx</li>
+                <li><span class="font-bold">CAC:</span> $500/customer</li>
+                <li><span class="font-bold">Gross Margin:</span> ~95% blended across tiers</li>
+            </ul>
+            
+            <div class="section-title">10 Customers/Month Scenario</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+                <div class="key-takeaway-item">
+                    <span class="emoji">🚀</span>
+                    <div>
+                        <p class="font-bold">Break-even Month</p>
+                        <span>Month 1 (cashflow positive immediately)</span>
+                    </div>
+                </div>
+                <div class="key-takeaway-item">
+                    <span class="emoji">📈</span>
+                    <div>
+                        <p class="font-bold">Post-Salary Profit</p>
+                        <span>Sustains positive net profit with >130 customers (Month 13 onward)</span>
+                    </div>
+                </div>
+                <div class="key-takeaway-item">
+                    <span class="emoji">💰</span>
+                    <div>
+                        <p class="font-bold">Year 2 Projection</p>
+                        <span>~240 customers, $2.4M ARR, ~$2.43M cumulative net profit</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-title">Key Takeaways</div>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li><span class="font-bold">Extremely high margins</span> due to minimal AI costs vs subscription revenue</li>
+                <li><span class="font-bold">Flexible AI model choice</span> opens market in both compliance-heavy and AI-forward industries</li>
+                <li><span class="font-bold">Break-even customer count</span> after salaries: ~130 customers (~13 months at 10 new/month)</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
