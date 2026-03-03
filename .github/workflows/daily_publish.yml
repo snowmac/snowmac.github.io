@@ -1,0 +1,32 @@
+name: Daily Post Publisher
+
+on:
+  schedule:
+    - cron: '0 14 * * *' # 7:00 AM MST
+  workflow_dispatch:
+
+jobs:
+  publish_queued_posts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Process Queue
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          mkdir -p _posts
+          if [ -d "_queue" ]; then
+            for file in _queue/*.md; do
+              [ -e "$file" ] || continue
+              FILENAME=$(basename "$file")
+              FILE_DATE=${FILENAME:0:10}
+              if [[ "$FILE_DATE" < "$TODAY" || "$FILE_DATE" == "$TODAY" ]]; then
+                mv "$file" "_posts/$FILENAME"
+              fi
+            done
+          fi
+      - name: Commit & Push
+        run: |
+          git config --global user.name "Sovereign Dispatcher"
+          git config --global user.email "dispatch@adambourg.com"
+          git add _posts/* _queue/* 2>/dev/null || true
+          git diff --staged --quiet || (git commit -m "chore: auto-publish $(date +%Y-%m-%d)" && git push)
