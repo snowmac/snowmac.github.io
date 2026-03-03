@@ -10,10 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install tweepy requests requests-oauthlib
+
       - name: Process Queue
+        id: process_queue
         run: |
           TODAY=$(date +%Y-%m-%d)
           mkdir -p _posts
+          PUBLISHED_POSTS=""
           if [ -d "_queue" ]; then
             for file in _queue/*.md; do
               [ -e "$file" ] || continue
@@ -21,12 +33,40 @@ jobs:
               FILE_DATE=${FILENAME:0:10}
               if [[ "$FILE_DATE" < "$TODAY" || "$FILE_DATE" == "$TODAY" ]]; then
                 mv "$file" "_posts/$FILENAME"
+                PUBLISHED_POSTS="$PUBLISHED_POSTS $FILENAME"
               fi
             done
           fi
+          echo "published_posts=$PUBLISHED_POSTS" >> $GITHUB_OUTPUT
+
       - name: Commit & Push
         run: |
           git config --global user.name "Sovereign Dispatcher"
           git config --global user.email "dispatch@adambourg.com"
           git add _posts/* _queue/* 2>/dev/null || true
           git diff --staged --quiet || (git commit -m "chore: auto-publish $(date +%Y-%m-%d)" && git push)
+
+      - name: Social Media Dispatch
+        if: steps.process_queue.outputs.published_posts != ''
+        env:
+          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: |
+          for post in ${{ steps.process_queue.outputs.published_posts }}; do
+            # Extract title and link from post file
+            TITLE=$(grep '^title:' _posts/$post | sed 's/title: //; s/"//g')
+            YEAR=${post:0:4}
+            MONTH=${post:5:2}
+            DAY=${post:8:2}
+            SLUG=${post:11}
+            SLUG=${SLUG%.md}
+            URL="https://www.adambourg.com/$YEAR/$MONTH/$DAY/$SLUG.html"
+            MESSAGE="🚀 New Post: $TITLE
+
+Read more at: $URL"
+            
+            python .github/scripts/social_dispatch.py "$MESSAGE"
+          done
