@@ -47,7 +47,7 @@ jobs:
           git diff --staged --quiet || (git commit -m "chore: auto-publish $(date +%Y-%m-%d)" && git push)
 
       - name: Social Media Dispatch
-        if: steps.process_queue.outputs.published_posts != ''
+        if: false # FEATURE FLAG: Set to true when API keys are ready
         env:
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
