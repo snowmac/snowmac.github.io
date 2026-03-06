@@ -66,7 +66,7 @@ jobs:
             URL="https://www.adambourg.com/$YEAR/$MONTH/$DAY/$SLUG.html"
             MESSAGE="🚀 New Post: $TITLE
 
-Read more at: $URL"
+            Read more at: $URL"
             
             python .github/scripts/social_dispatch.py "$MESSAGE"
           done
