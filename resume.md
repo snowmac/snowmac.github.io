@@ -4,7 +4,7 @@ layout: default
 
 # Resume
 
-Updated: June 30, 2025.
+Updated: April 2, 2026.
 
 <ul>
   <li><a href="/assets/resume/AdamBourgResume.docx">Resume in Docx format</a></li>
