@@ -6,6 +6,7 @@ feed:
   excerpt_only: false
 paginate: 20
 paginate_path: "/blog/page:num/"
+permalink: /:year/:month/:day/:title.html
 plugins:
   - jekyll-feed
   - jekyll-sitemap
