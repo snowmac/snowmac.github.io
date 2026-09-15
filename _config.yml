@@ -10,3 +10,10 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 google_analytics: UA-5394820-3
+telemetry:
+  status_label: "SYS_GRAPH: ONLINE"
+  node_count: 1200
+  stages:
+    - "00_LATENT_SPACE"
+    - "01_HOW_I_WORK"
+    - "02_WRITE_UPS"

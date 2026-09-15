@@ -399,20 +399,20 @@ description: "Principal Engineer building AI systems that run real businesses â€
 </head>
 <body>
 
-  <canvas id="gl-canvas"></canvas>
+  <canvas id="gl-canvas" data-node-count="{{ site.telemetry.node_count | default: 1200 }}"></canvas>
   <div class="webgl-fallback" id="fallback"></div>
 
   <aside class="telemetry-bar" aria-label="System status">
     <div class="telemetry-left">
       <div class="status-beacon"></div>
-      <span>SYS_GRAPH: ONLINE</span>
+      <span>{{ site.telemetry.status_label | default: "SYS_GRAPH: ONLINE" }}</span>
       <span style="color: var(--text-dim)">|</span>
       <span id="fps-counter">FPS: 60.0</span>
     </div>
     <div class="telemetry-right">
-      <span>STAGE: <strong id="stage-id" style="color: var(--cyan)">00_LATENT</strong></span>
+      <span>STAGE: <strong id="stage-id" style="color: var(--cyan)">{{ site.telemetry.stages[0] | default: "00_LATENT_SPACE" }}</strong></span>
       <span style="color: var(--text-dim)">|</span>
-      <span>1,200 NODES</span>
+      <span>{{ site.telemetry.node_count | default: 1200 }} NODES</span>
     </div>
   </aside>
 
@@ -617,7 +617,7 @@ description: "Principal Engineer building AI systems that run real businesses â€
       gl.attachShader(program, createShader(gl, gl.FRAGMENT_SHADER, fsSource));
       gl.linkProgram(program);
 
-      var COUNT = 1200;
+      var COUNT = parseInt(canvas.dataset.nodeCount, 10) || 1200;
       var pos0 = new Float32Array(COUNT * 3);
       var pos1 = new Float32Array(COUNT * 3);
       var pos2 = new Float32Array(COUNT * 3);
@@ -698,6 +698,12 @@ description: "Principal Engineer building AI systems that run real businesses â€
 
       var stageIdEl = document.getElementById('stage-id');
       var fpsCounterEl = document.getElementById('fps-counter');
+      var stageLabels = [
+        {% for stage in site.telemetry.stages %}"{{ stage | escape }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+      ];
+      if (stageLabels.length === 0) {
+        stageLabels = ["00_LATENT_SPACE", "01_HOW_I_WORK", "02_WRITE_UPS"];
+      }
       var lastTime = performance.now();
       var frameCount = 0;
       var lastFpsUpdate = 0;
@@ -711,11 +717,11 @@ description: "Principal Engineer building AI systems that run real businesses â€
         mouse.y += (mouse.targetY - mouse.y) * 0.1;
 
         if (scrollProgress < 0.3) {
-          stageIdEl.innerText = "00_LATENT_SPACE";
+          stageIdEl.innerText = stageLabels[0] || "";
         } else if (scrollProgress < 0.7) {
-          stageIdEl.innerText = "01_HOW_I_WORK";
+          stageIdEl.innerText = stageLabels[1] || stageLabels[0] || "";
         } else {
-          stageIdEl.innerText = "02_WRITE_UPS";
+          stageIdEl.innerText = stageLabels[2] || stageLabels[stageLabels.length - 1] || "";
         }
 
         frameCount++;
