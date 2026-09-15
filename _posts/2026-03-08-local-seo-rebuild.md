@@ -1,15 +1,8 @@
 ---
 layout: post
-title: "Local Seo Rebuild"
-date: 2026-03-08
-categories: SEO Automation Software 3.0 Small Business
----
-
----
 title: "I Rebuilt My Entire Local SEO Strategy in One Session. Here's What That Looks Like."
 date: 2026-03-08
-author: Adam Bourg
-tags: [SEO, Automation, Software 3.0, Small Business]
+categories: SEO Automation Software 3.0 Small Business
 ---
 
 Let me be direct. I'm a Principal Engineer. I run a junk removal and scrap metal business on the side. And until recently, my website was a single HTML file that called itself a scrap metal company when it should have been leading with junk removal.
