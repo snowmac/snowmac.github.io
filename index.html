@@ -114,6 +114,39 @@ description: "Principal Engineer building AI systems that run real businesses â€
       50% { opacity: 0.4; transform: scale(1.2); }
     }
 
+    .hud-editable {
+      border-bottom: 1px dashed transparent;
+      outline: none;
+      cursor: text;
+      border-radius: 2px;
+      padding: 0 2px;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .hud-editable:hover {
+      border-bottom-color: var(--text-dim);
+    }
+
+    .hud-editable:focus {
+      border-bottom-color: var(--cyan);
+      background-color: rgba(56, 189, 248, 0.08);
+    }
+
+    .hud-reset {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .hud-reset:hover {
+      color: var(--cyan);
+    }
+
     .site-nav {
       position: fixed;
       top: 1.25rem;
@@ -405,14 +438,16 @@ description: "Principal Engineer building AI systems that run real businesses â€
   <aside class="telemetry-bar" aria-label="System status">
     <div class="telemetry-left">
       <div class="status-beacon"></div>
-      <span>{{ site.telemetry.status_label | default: "SYS_GRAPH: ONLINE" }}</span>
+      <span id="status-label" class="hud-editable" contenteditable="true" spellcheck="false" title="Click to edit">{{ site.telemetry.status_label | default: "SYS_GRAPH: ONLINE" }}</span>
       <span style="color: var(--text-dim)">|</span>
       <span id="fps-counter">FPS: 60.0</span>
     </div>
     <div class="telemetry-right">
-      <span>STAGE: <strong id="stage-id" style="color: var(--cyan)">{{ site.telemetry.stages[0] | default: "00_LATENT_SPACE" }}</strong></span>
+      <span>STAGE: <strong id="stage-id" class="hud-editable" contenteditable="true" spellcheck="false" title="Click to edit" style="color: var(--cyan)">{{ site.telemetry.stages[0] | default: "00_LATENT_SPACE" }}</strong></span>
       <span style="color: var(--text-dim)">|</span>
-      <span>{{ site.telemetry.node_count | default: 1200 }} NODES</span>
+      <span><span id="node-count-value" class="hud-editable" contenteditable="true" spellcheck="false" title="Click to edit">{{ site.telemetry.node_count | default: 1200 }}</span> NODES</span>
+      <span style="color: var(--text-dim)">|</span>
+      <button id="hud-reset" class="hud-reset" title="Reset HUD to defaults">RESET</button>
     </div>
   </aside>
 
@@ -617,57 +652,65 @@ description: "Principal Engineer building AI systems that run real businesses â€
       gl.attachShader(program, createShader(gl, gl.FRAGMENT_SHADER, fsSource));
       gl.linkProgram(program);
 
+      function buildScene(count) {
+        var pos0 = new Float32Array(count * 3);
+        var pos1 = new Float32Array(count * 3);
+        var pos2 = new Float32Array(count * 3);
+        var phases = new Float32Array(count);
+
+        for (var i = 0; i < count; i++) {
+          var i3 = i * 3;
+          phases[i] = Math.random() * Math.PI * 2;
+
+          var u = Math.random();
+          var v = Math.random();
+          var theta = u * 2.0 * Math.PI;
+          var phi = Math.acos(2.0 * v - 1.0);
+          var r = Math.cbrt(Math.random()) * 0.95;
+          pos0[i3] = r * Math.sin(phi) * Math.cos(theta);
+          pos0[i3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+          pos0[i3 + 2] = r * Math.cos(phi) * 0.5;
+
+          var lane = i % 4;
+          var laneX = (lane - 1.5) * 0.45;
+          var progressY = ((i % 100) / 100) * 1.6 - 0.8;
+          var jitterX = (Math.random() - 0.5) * 0.12;
+          var jitterY = (Math.random() - 0.5) * 0.05;
+          pos1[i3] = laneX + jitterX;
+          pos1[i3 + 1] = progressY + jitterY;
+          pos1[i3 + 2] = 0.0;
+
+          var cols = 40;
+          var col = i % cols;
+          var row = Math.floor(i / cols);
+          pos2[i3] = (col / cols) * 1.8 - 0.9;
+          pos2[i3 + 1] = (row / (count / cols)) * 1.4 - 0.7;
+          pos2[i3 + 2] = 0.0;
+        }
+
+        function createBuffer(data, attribName) {
+          var buf = gl.createBuffer();
+          gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+          gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+          var loc = gl.getAttribLocation(program, attribName);
+          gl.enableVertexAttribArray(loc);
+          gl.vertexAttribPointer(loc, data.length / count, gl.FLOAT, false, 0, 0);
+        }
+
+        var newVao = gl.createVertexArray();
+        gl.bindVertexArray(newVao);
+        createBuffer(pos0, "aPos0");
+        createBuffer(pos1, "aPos1");
+        createBuffer(pos2, "aPos2");
+        createBuffer(phases, "aPhase");
+
+        return newVao;
+      }
+
+      var NODE_COUNT_MIN = 50;
+      var NODE_COUNT_MAX = 4000;
       var COUNT = parseInt(canvas.dataset.nodeCount, 10) || 1200;
-      var pos0 = new Float32Array(COUNT * 3);
-      var pos1 = new Float32Array(COUNT * 3);
-      var pos2 = new Float32Array(COUNT * 3);
-      var phases = new Float32Array(COUNT);
-
-      for (var i = 0; i < COUNT; i++) {
-        var i3 = i * 3;
-        phases[i] = Math.random() * Math.PI * 2;
-
-        var u = Math.random();
-        var v = Math.random();
-        var theta = u * 2.0 * Math.PI;
-        var phi = Math.acos(2.0 * v - 1.0);
-        var r = Math.cbrt(Math.random()) * 0.95;
-        pos0[i3] = r * Math.sin(phi) * Math.cos(theta);
-        pos0[i3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-        pos0[i3 + 2] = r * Math.cos(phi) * 0.5;
-
-        var lane = i % 4;
-        var laneX = (lane - 1.5) * 0.45;
-        var progressY = ((i % 100) / 100) * 1.6 - 0.8;
-        var jitterX = (Math.random() - 0.5) * 0.12;
-        var jitterY = (Math.random() - 0.5) * 0.05;
-        pos1[i3] = laneX + jitterX;
-        pos1[i3 + 1] = progressY + jitterY;
-        pos1[i3 + 2] = 0.0;
-
-        var cols = 40;
-        var col = i % cols;
-        var row = Math.floor(i / cols);
-        pos2[i3] = (col / cols) * 1.8 - 0.9;
-        pos2[i3 + 1] = (row / (COUNT / cols)) * 1.4 - 0.7;
-        pos2[i3 + 2] = 0.0;
-      }
-
-      function createBuffer(data, attribName) {
-        var buf = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-        gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
-        var loc = gl.getAttribLocation(program, attribName);
-        gl.enableVertexAttribArray(loc);
-        gl.vertexAttribPointer(loc, data.length / COUNT, gl.FLOAT, false, 0, 0);
-      }
-
-      var vao = gl.createVertexArray();
-      gl.bindVertexArray(vao);
-      createBuffer(pos0, "aPos0");
-      createBuffer(pos1, "aPos1");
-      createBuffer(pos2, "aPos2");
-      createBuffer(phases, "aPhase");
+      var vao = buildScene(COUNT);
 
       var uProgressLoc = gl.getUniformLocation(program, "uProgress");
       var uTimeLoc = gl.getUniformLocation(program, "uTime");
@@ -698,12 +741,97 @@ description: "Principal Engineer building AI systems that run real businesses â€
 
       var stageIdEl = document.getElementById('stage-id');
       var fpsCounterEl = document.getElementById('fps-counter');
-      var stageLabels = [
+      var statusEl = document.getElementById('status-label');
+      var nodeCountEl = document.getElementById('node-count-value');
+      var resetBtn = document.getElementById('hud-reset');
+      var defaultStageLabels = [
         {% for stage in site.telemetry.stages %}"{{ stage | escape }}"{% unless forloop.last %},{% endunless %}{% endfor %}
       ];
-      if (stageLabels.length === 0) {
-        stageLabels = ["00_LATENT_SPACE", "01_HOW_I_WORK", "02_WRITE_UPS"];
+      if (defaultStageLabels.length === 0) {
+        defaultStageLabels = ["00_LATENT_SPACE", "01_HOW_I_WORK", "02_WRITE_UPS"];
       }
+
+      // --- Per-visitor HUD editing (localStorage only, never shared) ---
+      var HUD_KEY = 'hud-overrides-v1';
+      function loadOverrides() {
+        try {
+          return JSON.parse(window.localStorage.getItem(HUD_KEY)) || {};
+        } catch (e) {
+          return {};
+        }
+      }
+      function saveOverrides(overrides) {
+        try {
+          window.localStorage.setItem(HUD_KEY, JSON.stringify(overrides));
+        } catch (e) { /* private browsing / storage disabled: edits just won't persist */ }
+      }
+
+      var defaultStatusLabel = statusEl.textContent.trim();
+      var overrides = loadOverrides();
+      var stageLabels = defaultStageLabels.slice();
+      if (overrides.stages) {
+        overrides.stages.forEach(function (label, i) {
+          if (label) stageLabels[i] = label;
+        });
+      }
+      if (overrides.status) statusEl.textContent = overrides.status;
+      if (overrides.nodeCount) {
+        COUNT = Math.min(Math.max(overrides.nodeCount, NODE_COUNT_MIN), NODE_COUNT_MAX);
+        nodeCountEl.textContent = COUNT;
+        vao = buildScene(COUNT);
+      }
+
+      function commitOnEnter(el) {
+        el.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            el.blur();
+          }
+        });
+      }
+
+      statusEl.addEventListener('blur', function () {
+        var text = statusEl.textContent.trim() || defaultStatusLabel;
+        statusEl.textContent = text;
+        overrides.status = text;
+        saveOverrides(overrides);
+      });
+      commitOnEnter(statusEl);
+
+      var currentStageIndex = 0;
+      stageIdEl.addEventListener('blur', function () {
+        var text = stageIdEl.textContent.trim() || defaultStageLabels[currentStageIndex] || "";
+        stageIdEl.textContent = text;
+        overrides.stages = overrides.stages || [];
+        overrides.stages[currentStageIndex] = text;
+        stageLabels[currentStageIndex] = text;
+        saveOverrides(overrides);
+      });
+      commitOnEnter(stageIdEl);
+
+      nodeCountEl.addEventListener('blur', function () {
+        var parsed = parseInt(nodeCountEl.textContent.replace(/[^0-9]/g, ''), 10);
+        if (!parsed) parsed = COUNT;
+        parsed = Math.min(Math.max(parsed, NODE_COUNT_MIN), NODE_COUNT_MAX);
+        nodeCountEl.textContent = parsed;
+        if (parsed !== COUNT) {
+          COUNT = parsed;
+          vao = buildScene(COUNT);
+        }
+        overrides.nodeCount = COUNT;
+        saveOverrides(overrides);
+      });
+      commitOnEnter(nodeCountEl);
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          try {
+            window.localStorage.removeItem(HUD_KEY);
+          } catch (e) {}
+          window.location.reload();
+        });
+      }
+
       var lastTime = performance.now();
       var frameCount = 0;
       var lastFpsUpdate = 0;
@@ -717,11 +845,14 @@ description: "Principal Engineer building AI systems that run real businesses â€
         mouse.y += (mouse.targetY - mouse.y) * 0.1;
 
         if (scrollProgress < 0.3) {
-          stageIdEl.innerText = stageLabels[0] || "";
+          currentStageIndex = 0;
         } else if (scrollProgress < 0.7) {
-          stageIdEl.innerText = stageLabels[1] || stageLabels[0] || "";
+          currentStageIndex = stageLabels[1] !== undefined ? 1 : 0;
         } else {
-          stageIdEl.innerText = stageLabels[2] || stageLabels[stageLabels.length - 1] || "";
+          currentStageIndex = stageLabels[2] !== undefined ? 2 : stageLabels.length - 1;
+        }
+        if (document.activeElement !== stageIdEl) {
+          stageIdEl.innerText = stageLabels[currentStageIndex] || "";
         }
 
         frameCount++;
