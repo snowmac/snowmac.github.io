@@ -3,6 +3,7 @@ layout: post
 title: "JavaScript Doesn't Have Memory Leaks. Your References Do."
 date: 2026-09-18
 categories: JavaScript Node.js Engineering Performance
+permalink: /preview.html
 ---
 
 "JavaScript is garbage collected, so I don't have to think about memory" is one of the more expensive lies engineers tell themselves. I've been writing JavaScript since I was a teenager, and the apps that fall over aren't falling over because the garbage collector is broken. They're falling over because someone, often me, on a bad day, kept a reference alive that should have died.
