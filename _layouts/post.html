@@ -17,44 +17,36 @@
 
 {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#2A2734">
+    <meta name="theme-color" content="#07090e">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="canonical" href="{{site.url}}{{page.url}}"> 
+    <link rel="canonical" href="{{site.url}}{{page.url}}">
   </head>
   <body>
-    <header class="page-header" role="banner">
-      <div class="inner-header flex">
-        <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-        {% assign tagline = page.description | default: site.description | default: site.github.project_tagline %}
-        <h2 class="project-tagline">
-          <span class="visually-hidden">{{ tagline }}</span>
-          <span class="typewriter-text" aria-hidden="true" data-text="{{ tagline | escape }}"></span>
-        </h2>
-      </div>
-    </header>
-
-    <nav class="main-content">
-      <a href="/">Home</a>
-      - <a href="/about">About me</a>
-      <!-- - <a href="http://stacked-development.com/" tagert="_blank">My company: Stacked Development</a> -->
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/">HOME</a>
+      <a href="/about">ABOUT</a>
+      <a href="mailto:adam.bourg@gmail.com">CONTACT</a>
     </nav>
 
-
     <main id="content" class="main-content" role="main">
-      <p> <em>Published: </em> {{ page.date | date: "%m/%d/%Y"  }}</p>
+      <div class="hero-badge">
+        {% if page.categories.size > 0 %}{{ page.categories | join: " // " | upcase }}{% else %}FIELD NOTES{% endif %}
+      </div>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">Published {{ page.date | date: "%B %-d, %Y" }}</p>
 
       {{ content }}
-
-      <footer class="site-footer">
-        <span class="site-footer-credits">
-          Feel free to connect with me on <a href="https://www.linkedin.com/in/adambourg">LinkedIn</a>. 
-          | <a href="/feed.xml">RSS</a></span>
-          | <a href="https://dev.to/snowmac">
-            <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Adam's DEV Profile" height="30" width="30" style='padding-top:5px;'>
-          </a>
-      </footer>
     </main>
-    <script src="{{ '/assets/js/typewriter.js' | relative_url }}" defer></script>
+
+    <footer class="site-footer">
+      <a href="/">Home</a>
+      <a href="https://www.linkedin.com/in/adambourg">LinkedIn</a>
+      <a href="/feed.xml">RSS</a>
+      <a href="mailto:adam.bourg@gmail.com">Email</a>
+    </footer>
   </body>
 </html>
