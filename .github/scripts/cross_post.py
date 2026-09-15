@@ -4,16 +4,17 @@ import sys
 import yaml
 import requests
 
-# --- CROSS-POSTING: dev.to, Hashnode, Mastodon ---
-# Each platform is skipped gracefully (not a hard failure) if its secret
-# isn't configured yet, so this script is safe to run before every secret
-# has been set up in the repo.
+# --- CROSS-POSTING: dev.to, Mastodon ---
+# Hashnode was dropped: as of 2026, their GraphQL API (read AND write) is
+# gated behind a paid Pro plan on the publication ($5/mo or $50/yr), so
+# free-tier auto-posting there isn't possible anymore.
+# Each remaining platform is skipped gracefully (not a hard failure) if its
+# secret isn't configured yet, so this script is safe to run before every
+# secret has been set up in the repo.
 
 SITE_URL = "https://www.adambourg.com"
 
 DEVTO_API_KEY = os.environ.get("DEVTO_API_KEY")
-HASHNODE_TOKEN = os.environ.get("HASHNODE_TOKEN")
-HASHNODE_PUBLICATION_ID = os.environ.get("HASHNODE_PUBLICATION_ID")
 MASTODON_INSTANCE_URL = os.environ.get("MASTODON_INSTANCE_URL")
 MASTODON_ACCESS_TOKEN = os.environ.get("MASTODON_ACCESS_TOKEN")
 
@@ -81,42 +82,6 @@ def post_to_devto(title, body, categories, canonical_url):
         print(f"Error posting to dev.to: {e}")
 
 
-def post_to_hashnode(title, body, canonical_url):
-    if not HASHNODE_TOKEN or not HASHNODE_PUBLICATION_ID:
-        print("Skipping Hashnode: HASHNODE_TOKEN or HASHNODE_PUBLICATION_ID not found in environment.")
-        return
-
-    query = """
-    mutation PublishPost($input: PublishPostInput!) {
-      publishPost(input: $input) {
-        post { url }
-      }
-    }
-    """
-    variables = {
-        "input": {
-            "title": title,
-            "contentMarkdown": body,
-            "publicationId": HASHNODE_PUBLICATION_ID,
-            "originalArticleURL": canonical_url,
-        }
-    }
-
-    try:
-        response = requests.post(
-            "https://gql.hashnode.com",
-            headers={"Authorization": HASHNODE_TOKEN, "content-type": "application/json"},
-            json={"query": query, "variables": variables},
-        )
-        data = response.json()
-        if response.status_code == 200 and not data.get("errors"):
-            print(f"Posted to Hashnode: {data['data']['publishPost']['post']['url']}")
-        else:
-            print(f"Error posting to Hashnode: {data}")
-    except Exception as e:
-        print(f"Error posting to Hashnode: {e}")
-
-
 def post_to_mastodon(title, canonical_url):
     if not MASTODON_INSTANCE_URL or not MASTODON_ACCESS_TOKEN:
         print("Skipping Mastodon: MASTODON_INSTANCE_URL or MASTODON_ACCESS_TOKEN not found in environment.")
@@ -154,5 +119,4 @@ if __name__ == "__main__":
 
         print(f"--- Cross-posting: {title} ---")
         post_to_devto(title, body, categories, canonical_url)
-        post_to_hashnode(title, body, canonical_url)
         post_to_mastodon(title, canonical_url)
