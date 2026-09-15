@@ -11,6 +11,8 @@ categories: AI Agentic-Workflows Engineering
 
 ## What Orchestration Actually Is
 
+**What is AI orchestration, in one sentence?** It's the layer that decides what an AI system does next — which tool to call, which step to retry, what to do when something fails — across a task that needs more than a single model call to complete.
+
 A single AI model call is easy to demo: type a prompt, get a response. Orchestration is everything that happens when a real task needs more than one call, more than one tool, and a decision about what to do next based on what just happened.
 
 Concretely, orchestration is the answer to questions like:

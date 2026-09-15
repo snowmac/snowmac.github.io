@@ -11,7 +11,7 @@ categories: AI RAG Engineering
 
 ## The One-Sentence Version
 
-RAG (retrieval-augmented generation) gives a model access to your specific information at the moment it answers a question. Fine-tuning changes the model itself, baking patterns into its weights ahead of time. For nearly every small-to-mid-size business use case I've seen, RAG is the right answer, and fine-tuning is the wrong first move.
+**What's the difference between RAG and fine-tuning?** RAG (retrieval-augmented generation) gives a model access to your specific information at the moment it answers a question. Fine-tuning changes the model itself, baking patterns into its weights ahead of time. For nearly every small-to-mid-size business use case I've seen, RAG is the right answer, and fine-tuning is the wrong first move.
 
 ---
 

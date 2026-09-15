@@ -5,7 +5,7 @@ date: 2026-09-20
 categories: AI Security Small-Business
 ---
 
-"Shadow AI" is a term that's been climbing hard in search data lately — nearly 3,000 searches a month and rising. If you haven't heard it, here's the short version: it means employees using AI tools your company never approved, sanctioned, or even knows about. If you run a business with more than a handful of people, I'd bet money it's already happening to you.
+"Shadow AI" is a term that's been climbing hard in search data lately — nearly 3,000 searches a month and rising. **What is shadow AI?** In one sentence: employees using AI tools your company never approved, sanctioned, or even knows about — the AI-era version of "shadow IT." If you run a business with more than a handful of people, I'd bet money it's already happening to you.
 
 ---
 
@@ -24,6 +24,15 @@ Shadow IT — someone using an unapproved app — is an old problem. Shadow AI i
 For a business handling anything sensitive — client health information, financial records, proprietary pricing, unreleased product details — that's not a minor policy violation. That's the kind of thing that shows up in a breach disclosure.
 
 ---
+
+## How to Actually Detect Shadow AI (Not Just Assume It)
+
+Before you can fix it, you need a real picture of what's already happening, not a guess. Four places that actually surface it:
+
+- **Your expense reports and card statements.** Small recurring charges to AI tool vendors are the single easiest signal — someone expensed a $20/month subscription because it made their job easier, and nobody flagged it because it looked like any other SaaS tool.
+- **Your SSO/identity provider's app catalog.** If you're on Okta, Google Workspace, or Microsoft Entra, the "apps used to sign in with company credentials" report will surface AI tools employees connected without going through procurement.
+- **Network-level DNS logs**, if you have them — traffic to known AI tool domains from company devices is visible even when the tool itself was never installed through IT.
+- **Just ask, without the ambush.** A short, blame-free "what AI tools are you using day to day, even the free ones" survey gets surprisingly honest answers, because — as above — nobody thinks of this as something to hide.
 
 ## What I'd Actually Do About It (Not the 40-Page Policy Version)
 

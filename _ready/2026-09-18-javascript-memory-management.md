@@ -1,0 +1,183 @@
+---
+layout: post
+title: "JavaScript Doesn't Have Memory Leaks. Your References Do."
+date: 2026-09-18
+categories: JavaScript Node.js Engineering Performance
+---
+
+"JavaScript is garbage collected, so I don't have to think about memory" is one of the more expensive lies engineers tell themselves. I've been writing JavaScript since I was a teenager, and the apps that fall over aren't falling over because the garbage collector is broken. They're falling over because someone — often me, on a bad day — kept a reference alive that should have died.
+
+This is the deep-dive I've wanted to write for years: how V8's garbage collector actually works, why "leaks" happen anyway, and how to find and fix them — in the browser and in Node.js, because the two environments leak in genuinely different ways for one structural reason that's easy to miss.
+
+---
+
+## The Garbage Collector's Actual Job
+
+**What is a memory leak in JavaScript?** It's memory that's no longer needed but never gets freed, because something in your code still holds a reference to it — even unintentionally. JavaScript doesn't have leaks the way C does (forgetting to call `free()`); it has *unintended reachability*, which is a different bug with a different fix.
+
+A garbage collector doesn't free memory you're "done with." It frees memory nothing can reach anymore. Those sound similar. They aren't. The GC only knows what's *reachable* — walkable from a root (global scope, the current call stack, active closures) through a chain of references. If your code still holds a reference to something, no matter how unintentionally, the GC considers it alive and will never touch it.
+
+That's the whole story of a JavaScript memory leak, in either environment: not a bug in garbage collection, but an object staying reachable longer than you meant it to.
+
+---
+
+## How V8 Actually Collects Garbage
+
+This part is identical whether you're in Chrome or Node — both run on V8. V8 splits the heap into generations, based on the generational hypothesis: most objects die young.
+
+**Young generation.** New allocations land here first, in a small, fast space. V8's young-generation collector (nicknamed Scavenger) uses semi-space copying — the space is split in two halves, and everything still reachable gets copied from the active half to the other on each collection. Copying is fast because you're only touching live objects, which is why short-lived objects are nearly free in JavaScript.
+
+**Old generation.** Objects that survive a couple of young-generation collections get promoted here. This space uses mark-sweep-compact instead of copying, because copying the whole old generation on every pass would be far too slow. V8 marks every reachable object from the roots, sweeps the unreachable ones, and periodically compacts to reduce fragmentation — mostly incrementally and concurrently on background threads, specifically so a full stop-the-world pause doesn't freeze whatever's running.
+
+The engine is doing real, sophisticated work to keep collection cheap. It cannot save you from an object your own code is still pointing to — and that's where the browser and Node genuinely diverge.
+
+---
+
+## Why the Same Engine Leaks Differently in Each Environment
+
+A browser tab has a natural reset button: the user navigates away or closes it, and the whole heap — leaks included — goes with it. A leak in a frontend app is bounded by how long someone keeps that tab open, which is often minutes to hours.
+
+A Node process has no such reset. It's meant to run for days or weeks between deploys, serving thousands of requests from the same long-lived heap. A leak that adds a few kilobytes per request is invisible in a five-minute test and a guaranteed out-of-memory crash three days into production. This is the single biggest reason Node memory leaks deserve more paranoia than frontend ones: the failure mode isn't a sluggish tab, it's your whole service going down.
+
+---
+
+## Frontend Leak Patterns
+
+### 1. Detached DOM nodes
+
+```javascript
+let cachedRows = [];
+
+function refreshTable(rows) {
+  const table = document.getElementById('table');
+  table.innerHTML = ''; // old rows removed from the DOM
+
+  rows.forEach(row => {
+    const tr = document.createElement('tr');
+    tr.textContent = row.label;
+    table.appendChild(tr);
+    cachedRows.push(tr); // ...but a reference to every old one lives on here
+  });
+}
+```
+
+The old `<tr>` elements are gone from the visible DOM, but `cachedRows` still holds a reference to every one ever created. Each is "detached" — removed from the tree, still reachable from JS — and the GC will never reclaim them. Run `refreshTable` a thousand times and you've got a thousand ghost tables sitting in memory.
+
+### 2. Event listeners that outlive their element
+
+```javascript
+function attachTracking(el) {
+  const onScroll = () => trackPosition(el);
+  window.addEventListener('scroll', onScroll);
+  // el gets removed from the DOM later, but window still holds onScroll,
+  // and onScroll's closure still holds el
+}
+```
+
+`window` isn't going anywhere, which means anything it holds a listener reference to isn't going anywhere either. Removing `el` from the DOM does nothing — the listener, and everything the listener closes over, stays alive for the life of the page. Always pair `addEventListener` with a matching `removeEventListener` at the point the associated element or component is torn down.
+
+### 3. Closures over more than they need
+
+```javascript
+function setupHandler(largeDataset) {
+  const summary = summarize(largeDataset); // small, this is all we actually need
+
+  document.getElementById('btn').addEventListener('click', () => {
+    console.log(summary);
+  });
+}
+```
+
+The handler only references `summary`, but depending on how the closure is compiled, the entire lexical scope of `setupHandler` — including `largeDataset` — can stay alive as long as that closure is reachable, even though the handler never touches it directly. Pull only what you need into a narrower scope.
+
+---
+
+## Node.js Leak Patterns
+
+### 1. EventEmitter listeners piling up per-request
+
+```javascript
+const emitter = require('./shared-emitter');
+
+app.get('/status', (req, res) => {
+  emitter.on('update', (data) => res.write(data)); // never removed
+  // every request to this route adds one more permanent listener
+});
+```
+
+Node's `EventEmitter` will warn you about this specifically — `MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 listeners added.` If you've seen that warning and dismissed it, that was the leak, not a false alarm. A listener attached in a request handler and never removed accumulates one per request, forever, for the life of the process. Use `.once()` where it fits, or explicitly `.removeListener()` when the request completes.
+
+### 2. Module-level caches with no bound
+
+```javascript
+const sessionCache = new Map(); // lives at module scope, for the process's entire life
+
+function trackSession(id, data) {
+  sessionCache.set(id, data);
+}
+```
+
+This is the same unbounded-cache mistake as in the browser, but the consequence is worse: a browser tab's cache resets on reload. A Node module's top-level state persists for the entire uptime of the server. Every cache at module scope needs an eviction policy — max size, TTL, or an LRU implementation — or it's a slow-motion OOM crash with a delay timer on it.
+
+### 3. Timers and intervals outliving their purpose
+
+```javascript
+function startPolling(connection) {
+  setInterval(() => {
+    connection.ping();
+  }, 5000);
+  // if `connection` closes, this interval — and its closure over `connection` —
+  // keeps running and keeps the connection object alive indefinitely
+}
+```
+
+An uncleared `setInterval` is a classic Node leak because the callback's closure keeps everything it references alive for as long as the timer runs — which, without an explicit `clearInterval`, is the life of the process. Always keep the return value of `setInterval`/`setTimeout` and clear it when the resource it depends on goes away.
+
+---
+
+## Debugging: Knowing You Have a Leak Before It's an Outage
+
+You want a signal that fires long before a snapshot is even necessary.
+
+- **In the browser**, the Performance Monitor tab (separate from the Memory panel) gives a live, scrubbable graph of JS heap size, DOM node count, and listener count over time. Leave it running while you use the app normally — a heap that saws up and down with GC but trends flat is healthy; one that trends up and to the right, forever, is not.
+- **In Node**, log `process.memoryUsage()` on an interval in any long-running service and ship it to whatever metrics system you already use (even just stdout in a staging environment is enough to start). Watch `heapUsed` specifically. A heap that climbs in a straight line under steady traffic and never comes back down after GC is your leak, plotted for you, days before it becomes a crash.
+- **RSS vs. `heapUsed`** matters here too: RSS (resident set size) includes memory outside V8's managed heap entirely — native buffers, connections held by C++ bindings, and similar. If RSS grows but `heapUsed` stays flat, the leak isn't in your JavaScript objects at all — it's a native module or an unclosed resource (a database connection, an open file handle, an un-destroyed stream).
+- **`--max-old-space-size`** is worth setting explicitly rather than relying on V8's default, so a real leak produces a clean, early, debuggable crash with a heap dump instead of the process silently consuming the entire host's memory first.
+
+## Finding: How to Actually Find Memory Leaks in JavaScript (Chrome and Node)
+
+Once you know something's leaking, the goal is the exact chain of references keeping it alive — not a guess.
+
+**In the browser**, Chrome DevTools' Memory panel has a specific, reliable workflow for finding JavaScript memory leaks:
+
+1. Take a heap snapshot.
+2. Perform the suspect action (open/close a modal, navigate to a view and back).
+3. Take a second heap snapshot.
+4. Force garbage collection (the trash-can icon), then take a third snapshot.
+5. Use the "Comparison" view between snapshots two and three. Anything that grew and didn't shrink after a forced GC is either a real leak or something that legitimately needs to stay alive — and DevTools shows you the retaining path directly.
+
+The **Allocation instrumentation on timeline** recorder (also in the Memory panel) is the other half of this — it shows you *where in your code* allocations that survive are coming from, which is faster than diffing snapshots by hand when the leak is subtle.
+
+**In Node**, the same underlying tooling works, because it's the same engine:
+
+- Start Node with `--inspect` and open `chrome://inspect` in Chrome for the identical Memory panel and comparison workflow against a live server process.
+- `heapdump` (npm package) lets you trigger a `.heapsnapshot` file on demand from inside a running production process — signal it, get a file, load it in Chrome DevTools exactly like a browser snapshot.
+- **Clinic.js** (`clinic doctor`, `clinic heapprofiler`) wraps a lot of this into one command and is the tool I reach for first on an unfamiliar Node codebase — Doctor tells you *what kind* of problem you have (GC pressure, event loop blocking, I/O), and HeapProfiler gives you a flamegraph of allocations if it points to memory specifically.
+- **`0x`** generates a flamegraph from a single command (`0x server.js`) and is excellent for CPU-heavy investigations that turn out to be memory-adjacent — a function doing far more allocation than it should is often visible immediately in the flamegraph's width.
+- **`why-is-node-running`** answers a narrower, very practical question: why hasn't my process exited? An open handle — a timer, a socket, a file descriptor — keeping the event loop alive is often the exact same reference that's leaking memory.
+
+## Patching: What Actually Fixes a Leak Once You've Found It
+
+Finding the retaining path is most of the work. The fix is usually one of a small number of moves:
+
+- **`WeakMap` / `WeakSet`** — the direct fix for the unbounded-cache pattern from earlier, when your keys are objects (like DOM nodes) that should be collectible the moment nothing else references them. A `WeakMap` never keeps its keys alive; a plain `Map` always does.
+- **`WeakRef` / `FinalizationRegistry`** — narrower tools, useful when you genuinely need to hold a reference to something without preventing its collection, and want to be notified after the fact when it's gone. Reach for these rarely and deliberately — `FinalizationRegistry` callbacks aren't guaranteed to run promptly, or at all, so they're not a substitute for actually cleaning up in the normal control flow.
+- **`AbortController`** — the modern, clean way to tie an event listener's lifetime to something else's. Pass the same `signal` to every listener attached during a component or request's lifetime, call `.abort()` once, and every one of them is removed in a single call instead of needing individually paired `removeEventListener`s.
+- **Explicit bounds on every cache** — a max size (evict oldest or least-recently-used past a limit) or a TTL. There is no such thing as an unbounded cache that's actually safe; there's only one that hasn't leaked yet.
+- **Regression prevention** — for anything that bit you once, add a heap-size assertion to a test: perform the suspect action N times in a headless run, force GC, assert heap growth stays under a threshold. It's a cheap test that catches the exact class of bug that's otherwise invisible until day six of uptime.
+
+---
+
+## The Takeaway
+
+Same engine, same generational garbage collector, same underlying rule: nothing gets freed while something still points to it. What changes between a frontend app and a Node service is the blast radius. A browser leak degrades one person's tab until they close it. A Node leak degrades your entire service until it crashes, because there's no reload button on a server that's supposed to stay up for weeks. Find the retaining path — not the symptom — and treat every module-level cache, every event listener, and every timer as something that needs an explicit exit plan, not just a start.

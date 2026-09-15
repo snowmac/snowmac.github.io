@@ -11,7 +11,11 @@ categories: AI Agentic-Workflows Strategy
 
 ## The Definition That Actually Matters
 
-Forget the marketing copy. An agentic system does three things a chatbot doesn't:
+**What is agentic AI, in one sentence?** It's AI that pursues a goal across multiple steps on its own — using tools, checking its own work, and adjusting when something goes wrong — instead of just answering one prompt at a time.
+
+**What is an AI agent, specifically?** An AI agent is the individual system doing that work: a model plus the tools it's allowed to use (files, APIs, a browser, a terminal) plus the logic that decides what to do next based on what just happened. "Agentic AI" is the broader approach; "an AI agent" is one running instance of it.
+
+With that out of the way — forget the marketing copy. An agentic system does three things a chatbot doesn't:
 
 1. **It takes multiple steps without you prompting each one.** You give it a goal, not a script.
 2. **It uses tools** — reads files, calls APIs, runs commands, checks its own output — instead of just generating text.

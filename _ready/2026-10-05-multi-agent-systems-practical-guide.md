@@ -7,6 +7,8 @@ categories: AI Agentic-Workflows Engineering
 
 "Multi-agent systems" pulls about 1,300 searches a month, and it's a term that's genuinely useful once you strip the sci-fi framing off it. It doesn't mean a team of robots debating each other. It means something much more boring and much more practical: splitting a task across multiple focused AI processes instead of asking one to do everything.
 
+**What is a multi-agent system, in one sentence?** It's a task handled by more than one AI agent, each with a narrower job, coordinating through defined handoffs instead of one process trying to do everything at once.
+
 ---
 
 ## Why You'd Ever Want More Than One Agent
@@ -25,11 +27,13 @@ Separating them — one process focused purely on gathering and checking facts, 
 
 ---
 
-## The Part Nobody Mentions: Coordination Is the Hard Part
+## Why Multi-Agent Systems Actually Fail
 
-The individual agents are the easy part. The hard part is what happens between them — how does the second agent know what the first one found, in what format, and what happens if the first agent's output doesn't match what the second one expected?
+The individual agents are the easy part. The hard part — and the actual answer to why multi-agent systems fail in practice — is what happens between them: how does the second agent know what the first one found, in what format, and what happens if the first agent's output doesn't match what the second one expected?
 
 This is the same orchestration problem I wrote about separately, just with more moving pieces. More agents means more places where a handoff can go wrong, which means more agents is not automatically better. It's a tool for genuinely separable problems, not a way to make a system sound more impressive.
+
+Anthropic published a genuinely good, detailed engineering account of this exact tradeoff in "How We Built Our Multi-Agent Research System" — worth reading directly if you want the real-world version of this problem, including where their own orchestrator-worker pattern got expensive (more agents means more tokens burned in parallel) and where it was worth it anyway. It's a rare case of a vendor being honest about the cost side of the equation, not just the capability side.
 
 ---
 

@@ -33,9 +33,9 @@ Both have a place. A dedicated review tool is valuable when you have an existing
 
 ---
 
-## The Real Risk: False Confidence
+## The Real Risk: False Confidence (Why AI Code Still Needs Human Review)
 
-The failure mode I'd actually worry about isn't a tool that catches nothing — it's a tool that catches enough real issues that a team starts trusting it to catch everything. AI review tools are good at the mechanical layer and weak at the judgment layer, and a team that stops applying human judgment because "the AI reviewed it" has traded a visible risk for an invisible one.
+The failure mode I'd actually worry about isn't a tool that catches nothing — it's a tool that catches enough real issues that a team starts trusting it to catch everything. AI review tools are good at the mechanical layer and weak at the judgment layer, and a team that stops applying human judgment because "the AI reviewed it" has traded a visible risk for an invisible one. That's the honest answer to why AI-generated and AI-reviewed code still needs a human in the loop: not because the tools are bad, but because "correct" and "the right call" are different questions, and only one of them is mechanical.
 
 ---
 
