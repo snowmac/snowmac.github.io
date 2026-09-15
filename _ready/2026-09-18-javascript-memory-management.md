@@ -25,7 +25,7 @@ That's the whole story of a JavaScript memory leak, in either environment: not a
 
 This part is identical whether you're in Chrome or Node — both run on V8. V8 splits the heap into generations, based on the generational hypothesis: most objects die young.
 
-**Young generation.** New allocations land here first, in a small, fast space. V8's young-generation collector (nicknamed Scavenger) uses semi-space copying — the space is split in two halves, and everything still reachable gets copied from the active half to the other on each collection. Copying is fast because you're only touching live objects, which is why short-lived objects are nearly free in JavaScript.
+**Young generation.** New allocations land here first, in a small, fast space. V8's young-generation collector (nicknamed Scavenger) has traditionally used semi-space copying — the space split in two halves, everything still reachable copied from the active half to the other on each collection. Copying is fast because you're only touching live objects, which is why short-lived objects are nearly free in JavaScript. More recent V8 versions have been shifting this toward a project called Minor Mark-Sweep (Minor MS), which collects the young generation with mark-sweep instead of copying — cutting the memory overhead of maintaining two semi-spaces, while the collection itself stays parallelized across worker threads. The mental model (short-lived objects are cheap to collect) holds either way; the exact mechanism underneath it is still actively evolving.
 
 **Old generation.** Objects that survive a couple of young-generation collections get promoted here. This space uses mark-sweep-compact instead of copying, because copying the whole old generation on every pass would be far too slow. V8 marks every reachable object from the roots, sweeps the unreachable ones, and periodically compacts to reduce fragmentation — mostly incrementally and concurrently on background threads, specifically so a full stop-the-world pause doesn't freeze whatever's running.
 
@@ -76,19 +76,25 @@ function attachTracking(el) {
 
 `window` isn't going anywhere, which means anything it holds a listener reference to isn't going anywhere either. Removing `el` from the DOM does nothing — the listener, and everything the listener closes over, stays alive for the life of the page. Always pair `addEventListener` with a matching `removeEventListener` at the point the associated element or component is torn down.
 
-### 3. Closures over more than they need
+### 3. Sibling closures sharing a context
 
 ```javascript
 function setupHandler(largeDataset) {
   const summary = summarize(largeDataset); // small, this is all we actually need
 
+  // this closure is never called, but it references largeDataset —
+  // which is enough to force largeDataset into the shared Context
+  function debugDump() {
+    if (largeDataset) console.log('dataset present');
+  }
+
   document.getElementById('btn').addEventListener('click', () => {
-    console.log(summary);
+    console.log(summary); // this closure never touches largeDataset directly
   });
 }
 ```
 
-The handler only references `summary`, but depending on how the closure is compiled, the entire lexical scope of `setupHandler` — including `largeDataset` — can stay alive as long as that closure is reachable, even though the handler never touches it directly. Pull only what you need into a narrower scope.
+This one is subtle and it's the closure leak that actually bites people in production, not the vague "closures keep everything alive" version. V8 doesn't retain a variable just because it exists in an enclosing function — it only gets heap-allocated into a Context object if *some* closure in that scope actually references it. The catch is that sibling closures created in the same scope can end up sharing one Context object rather than each getting its own trimmed-down copy. Here, `debugDump` referencing `largeDataset` is enough to pull it into the shared Context — and because the click handler is a sibling closure over that same Context, it keeps `largeDataset` alive too, even though it never reads it. This is the mechanism behind the well-known "Meteor leak" from a few years back, and it still shows up today any time an unused or debug-only closure sits next to the one that actually matters. Delete dead closures, and split unrelated closures into genuinely separate scopes rather than leaving them next to each other "for convenience."
 
 ---
 
@@ -141,7 +147,7 @@ You want a signal that fires long before a snapshot is even necessary.
 
 - **In the browser**, the Performance Monitor tab (separate from the Memory panel) gives a live, scrubbable graph of JS heap size, DOM node count, and listener count over time. Leave it running while you use the app normally — a heap that saws up and down with GC but trends flat is healthy; one that trends up and to the right, forever, is not.
 - **In Node**, log `process.memoryUsage()` on an interval in any long-running service and ship it to whatever metrics system you already use (even just stdout in a staging environment is enough to start). Watch `heapUsed` specifically. A heap that climbs in a straight line under steady traffic and never comes back down after GC is your leak, plotted for you, days before it becomes a crash.
-- **RSS vs. `heapUsed`** matters here too: RSS (resident set size) includes memory outside V8's managed heap entirely — native buffers, connections held by C++ bindings, and similar. If RSS grows but `heapUsed` stays flat, the leak isn't in your JavaScript objects at all — it's a native module or an unclosed resource (a database connection, an open file handle, an un-destroyed stream).
+- **RSS vs. `heapUsed`** matters here too: RSS (resident set size) includes memory outside V8's managed heap entirely. If RSS grows but `heapUsed` stays flat, look at three places before assuming a native module: `Buffer`/`ArrayBuffer` allocations, which live in the `external` field of `process.memoryUsage()` rather than `heapUsed`; an unclosed resource (a database connection, an open file handle, an un-destroyed stream); and allocator fragmentation. That third one surprises people — under high concurrency, Linux's default glibc allocator is genuinely bad about handing freed memory back to the OS, so V8 can have correctly freed something at the JS level while RSS still looks high. Swapping in `jemalloc` or `tcmalloc` (via `LD_PRELOAD`) is a standard production fix for exactly this "phantom leak," not a JavaScript-level bug at all.
 - **`--max-old-space-size`** is worth setting explicitly rather than relying on V8's default, so a real leak produces a clean, early, debuggable crash with a heap dump instead of the process silently consuming the entire host's memory first.
 
 ## Finding: How to Actually Find Memory Leaks in JavaScript (Chrome and Node)
@@ -161,19 +167,40 @@ The **Allocation instrumentation on timeline** recorder (also in the Memory pane
 **In Node**, the same underlying tooling works, because it's the same engine:
 
 - Start Node with `--inspect` and open `chrome://inspect` in Chrome for the identical Memory panel and comparison workflow against a live server process.
-- `heapdump` (npm package) lets you trigger a `.heapsnapshot` file on demand from inside a running production process — signal it, get a file, load it in Chrome DevTools exactly like a browser snapshot.
-- **Clinic.js** (`clinic doctor`, `clinic heapprofiler`) wraps a lot of this into one command and is the tool I reach for first on an unfamiliar Node codebase — Doctor tells you *what kind* of problem you have (GC pressure, event loop blocking, I/O), and HeapProfiler gives you a flamegraph of allocations if it points to memory specifically.
-- **`0x`** generates a flamegraph from a single command (`0x server.js`) and is excellent for CPU-heavy investigations that turn out to be memory-adjacent — a function doing far more allocation than it should is often visible immediately in the flamegraph's width.
+- **`v8.writeHeapSnapshot()`** is built directly into Node core — zero dependencies, no native compilation, safe to wire up behind a signal in a running service:
+
+  ```javascript
+  const v8 = require('v8');
+  process.on('SIGUSR2', () => {
+    const fileName = v8.writeHeapSnapshot();
+    console.log(`Heap snapshot written to ${fileName}`);
+  });
+  ```
+
+  Trigger it against a live production process (`kill -USR2 <pid>`) and load the resulting `.heapsnapshot` file in Chrome DevTools exactly like a browser snapshot. This is the tool I'd reach for first now, precisely because it ships with Node itself.
+- **Clinic.js** (`clinic doctor`, `clinic heapprofiler`) is still a genuinely useful next step when the built-in snapshot isn't enough — Doctor tells you *what kind* of problem you have (GC pressure, event loop blocking, I/O) before you dig further, and HeapProfiler gives you a flamegraph of allocations if it points to memory.
+- **`0x`** generates a CPU flamegraph from a single command (`0x server.js`) and is useful for allocation-heavy investigations, though `node --prof` + `--prof-process`, or a CPU profile taken directly through the inspector, cover the same ground with nothing to install.
 - **`why-is-node-running`** answers a narrower, very practical question: why hasn't my process exited? An open handle — a timer, a socket, a file descriptor — keeping the event loop alive is often the exact same reference that's leaking memory.
 
 ## Patching: What Actually Fixes a Leak Once You've Found It
 
 Finding the retaining path is most of the work. The fix is usually one of a small number of moves:
 
-- **`WeakMap` / `WeakSet`** — the direct fix for the unbounded-cache pattern from earlier, when your keys are objects (like DOM nodes) that should be collectible the moment nothing else references them. A `WeakMap` never keeps its keys alive; a plain `Map` always does.
+- **`WeakMap` / `WeakSet`** — the fix for the detached-DOM-node cache pattern, *specifically when your keys are objects* (a DOM node, a component instance) that should be collectible the moment nothing else references them. A `WeakMap` never keeps its keys alive; a plain `Map` always does. This does **not** apply to the `sessionCache` example from the Node section above — those keys are session ID strings, and `WeakMap` only accepts object keys. For a primitive-keyed cache, you need explicit bounds instead (next bullet), not `WeakMap`.
 - **`WeakRef` / `FinalizationRegistry`** — narrower tools, useful when you genuinely need to hold a reference to something without preventing its collection, and want to be notified after the fact when it's gone. Reach for these rarely and deliberately — `FinalizationRegistry` callbacks aren't guaranteed to run promptly, or at all, so they're not a substitute for actually cleaning up in the normal control flow.
-- **`AbortController`** — the modern, clean way to tie an event listener's lifetime to something else's. Pass the same `signal` to every listener attached during a component or request's lifetime, call `.abort()` once, and every one of them is removed in a single call instead of needing individually paired `removeEventListener`s.
-- **Explicit bounds on every cache** — a max size (evict oldest or least-recently-used past a limit) or a TTL. There is no such thing as an unbounded cache that's actually safe; there's only one that hasn't leaked yet.
+- **`AbortController`** — the modern, clean way to tie a listener's lifetime to something else's, and it's not just a browser API. In the browser, pass the same `signal` to every `addEventListener` call for a component's lifetime and call `.abort()` once instead of pairing up individual `removeEventListener` calls. In Node, `EventEmitter.on()` accepts the same `{ signal }` option natively:
+
+  ```javascript
+  app.get('/status', (req, res) => {
+    const ac = new AbortController();
+    res.on('close', () => ac.abort()); // client disconnects, everything below is cleaned up
+
+    emitter.on('update', (data) => res.write(data), { signal: ac.signal });
+  });
+  ```
+
+  This is the direct fix for the per-request `EventEmitter` leak from earlier — one `.abort()` call on disconnect instead of remembering to `.removeListener()` on every exit path.
+- **Explicit bounds on every cache** — a max size (evict oldest or least-recently-used past a limit) or a TTL. This is what actually fixes the `sessionCache` example above. There is no such thing as an unbounded cache that's actually safe; there's only one that hasn't leaked yet.
 - **Regression prevention** — for anything that bit you once, add a heap-size assertion to a test: perform the suspect action N times in a headless run, force GC, assert heap growth stays under a threshold. It's a cheap test that catches the exact class of bug that's otherwise invisible until day six of uptime.
 
 ---
