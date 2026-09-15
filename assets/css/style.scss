@@ -1,59 +1,206 @@
 ---
 ---
 
-
 .pagination {
-    display: inline-block;
-  }
-  
-  .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-  }
-  
-  .pagination a.active {
-    background-color: #1e6bb8;
-    color: white;
-    border: 1px solid #1e6bb8;
-  }
+  display: inline-block;
+}
 
-  .center {
-      text-align: center;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination a {
+  color: #EDEBFF;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #454258;
+  margin: 0 4px;
+  border-radius: 4px;
+}
+
+.pagination a.active {
+  background-color: #00BCDB;
+  color: #2A2734;
+  border: 1px solid #00BCDB;
+}
+
+.center {
+  text-align: center;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #454258;
+}
+
 @import "{{ site.theme }}";
 
+/* ===================================================================
+   Tokyo Night palette
+   =================================================================== */
+
+body {
+  background-color: #2A2734;
+  color: #EDEBFF;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
 .page-header {
-  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-  text-align:center;
+  background: linear-gradient(60deg, #5234B2 0%, #00BCDB 100%);
+  text-align: center;
+  padding: 0 !important;
+}
+
+.project-name,
+.project-tagline {
+  color: #EDEBFF;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.main-content {
+  background-color: #2A2734;
+  color: #EDEBFF;
+}
+
+.main-content nav a {
+  color: #9A84EE;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.main-content nav a:hover {
+  color: #4EF4E0;
+}
+
+.main-content a {
+  color: #00BCDB;
+}
+
+.main-content a:hover {
+  color: #4EF4E0;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5 {
+  color: #7C65C3;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.main-content h1 a,
+.main-content h2 a,
+.main-content h3 a {
+  color: inherit;
+}
+
+.main-content hr {
+  border-top: 1px solid #454258;
+}
+
+.main-content blockquote {
+  color: #9A84EE;
+  border-left: 4px solid #5234B2;
+  background-color: #33303f;
+}
+
+.main-content pre,
+.main-content code {
+  background-color: #454258;
+  color: #24D5F7;
+  border-radius: 4px;
+}
+
+.main-content table th,
+.main-content table td {
+  border: 1px solid #454258;
+  color: #EDEBFF;
+}
+
+.main-content table th {
+  background-color: #454258;
+}
+
+.main-content table tr:nth-child(2n) {
+  background-color: #33303f;
+}
+
+.main-content .btn {
+  color: #2A2734;
+  background-color: #00BCDB;
+  border-color: #00BCDB;
+}
+
+.main-content .btn:hover {
+  background-color: #4EF4E0;
+  border-color: #4EF4E0;
+}
+
+.site-footer {
+  border-top: 1px solid #454258;
+  color: #9A84EE;
+}
+
+.site-footer a {
+  color: #00BCDB;
+}
+
+/* Homepage hero */
+.hero {
+  background-color: #454258;
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero p {
+  margin: 0 0 1rem 0;
+}
+
+.hero p:last-child {
+  margin-bottom: 0;
+}
+
+.hero a {
+  color: #4EF4E0;
+  font-weight: 600;
+}
+
+.hero a:hover {
+  color: #24D5F7;
+}
+
+.hero hr {
+  border-top: 1px solid #5234B2;
+  margin-top: 1.5rem;
+}
+
+/* Post list entries */
+.posts .post h1 a {
+  color: #7C65C3;
+}
+
+.posts .post h1 a:hover {
+  color: #4EF4E0;
 }
 
 .waves {
-  position:relative;
+  position: relative;
   width: 100%;
-  height:15vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
-  min-height:100px;
-  max-height:150px;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
 }
 
 .content {
-  position:relative;
-  height:20vh;
-  text-align:center;
-  background-color: white;
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: #2A2734;
 }
 
 /* Animation */
 
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
 .parallax > use:nth-child(1) {
   animation-delay: -2s;
@@ -73,28 +220,27 @@
 }
 @keyframes move-forever {
   0% {
-   transform: translate3d(-90px,0,0);
+    transform: translate3d(-90px, 0, 0);
   }
-  100% { 
-    transform: translate3d(85px,0,0);
+  100% {
+    transform: translate3d(85px, 0, 0);
   }
 }
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
-    height:40px;
-    min-height:40px;
+    height: 40px;
+    min-height: 40px;
   }
   .content {
-    height:30vh;
+    height: 30vh;
   }
   h1 {
-    font-size:24px;
+    font-size: 24px;
   }
-}
-
-.page-header{
-    padding:0!important; 
+  .hero {
+    padding: 1.25rem 1.25rem;
+  }
 }
 
 .youtube-embed {

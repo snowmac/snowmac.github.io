@@ -2,15 +2,42 @@
 layout: default
 ---
 
-# I'm Adam Bourg, it's nice to meet you. 
+# I'm Adam Bourg, it's nice to meet you.
 
 <p>
-<img src="/assets/img/me.jpg" style="float: right; border-radius: 50%; padding:20px" /> 
-    Welcome to my website! I'm so glad you are here. This site has taken many different forms; this is probably my 6th attempt at blogging in 5 years. The trouble isn't motivation but consistency. Inside this site you will find dozens of posts, many from 5 years ago up to last week. My hope is you'll discover value and my voice will resonate through the words I type. I hope you will feel the passion I have and hear the excitement in my voice. 
+<img src="/assets/img/me.jpg" style="float: right; border-radius: 50%; padding:20px" />
+I'm a Principal Engineer, and lately most of my work is building AI systems that actually run
+parts of a business — not demos, not chatbot toys bolted onto a landing page. Agentic workflows
+that answer phones, rebuild websites in an afternoon, and do real market research before a
+single line of product code gets written. This site is both my writing and my proof of work:
+most of what's on it was built or researched using the exact tools and process I'd use for a
+client.
 </p>
 
-A little bit about me, I'm a Passionate Programmer. I've been working with computers since I was 13. I knew this is what I wanted to do with my life from the beginning of my teenage years. I'm self taught but also college educated. My expertise doesn't just come from my credentials from my alma mater but from regular, consistent study of the field of software engineering. 
+## What I actually do
 
-Web development holds a special place in my heart, especially javascript. I find the technology fun and easy to work with while being powerful and flexible. My goal with this blog is excite you about development, encourage and give back to the community. 
+I design and build agentic AI systems — using tools like Claude Code and the Claude API — for
+problems that have a real, checkable outcome: a call that gets answered, a lead that gets
+captured, a site that gets rebuilt faster and cleaner than the manual version. I'm equally
+comfortable being hands-on with the engineering (I've been writing software since I was 13,
+self-taught and college-educated) and thinking about the business case for why a given system
+should exist at all.
 
-My technology specific interests right now lay within javascript memory management (I want to write a book or a video series on the topic), web assembly, building scalable systems and of course making things look pretty. 
+I also carry a HIPAA/compliance background from prior healthcare software work, which shapes
+how I think about AI systems that touch real customer data — security and compliance aren't an
+afterthought bolted on at the end.
+
+## Recent proof of work
+
+- [How I pressure-tested six local business verticals with AI market research in one afternoon]({{ site.baseurl }}{% post_url 2026-09-14-ai-market-research-in-an-afternoon %})
+- [I rebuilt an entire local SEO strategy in one session]({{ site.baseurl }}{% post_url 2026-03-08-local-seo-rebuild %})
+
+## Outside of client work
+
+Web development still holds a special place for me, especially JavaScript — I find it fun and
+flexible while being genuinely powerful. My longer-running technical interests are JavaScript
+memory management (I keep meaning to write a book or video series on it), WebAssembly, and
+building systems that scale without becoming unmanageable.
+
+If you want to talk about a project, [reach out](mailto:adam.bourg@gmail.com) or connect with
+me on [LinkedIn](https://www.linkedin.com/in/adambourg). 

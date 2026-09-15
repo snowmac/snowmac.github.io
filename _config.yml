@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
-title: Adam's Rambling Blog
-description: Ramblings from an ADHD brain that sometimes feature something about software
+title: Adam Bourg
+description: Principal Engineer building AI systems that run real businesses — agentic workflows, not slideware.
 show_downloads: false
 feed:
   excerpt_only: false

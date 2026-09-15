@@ -2,6 +2,29 @@
 layout: default
 ---
 
+<div class="hero">
+  <p>
+    I'm a Principal Engineer who builds AI systems that actually run parts of a business —
+    not demos, not slide decks. Lately that means agentic workflows built with Claude Code:
+    systems that answer phones, rebuild websites in an afternoon, and do real market research
+    before a single line of product code gets written.
+  </p>
+  <p>
+    I also carry a HIPAA/compliance background from prior work in healthcare software, which
+    shows up in how I think about AI systems that touch real customer data — not just how fast
+    they can be shipped.
+  </p>
+  <p>
+    <strong>Start here:</strong>
+    <a href="{{ site.baseurl }}{% post_url 2026-09-14-ai-market-research-in-an-afternoon %}">how I pressure-tested six business ideas with AI market research in one afternoon</a>,
+    or <a href="{{ site.baseurl }}{% post_url 2026-03-08-local-seo-rebuild %}">how I rebuilt an entire local SEO strategy in one session</a>.
+  </p>
+  <p>
+    <a href="/about">More about me</a> · <a href="mailto:adam.bourg@gmail.com">Get in touch</a>
+  </p>
+  <hr />
+</div>
+
 <div class="posts">
   {% for post in paginator.posts %}
    <article class="post">
@@ -9,7 +32,7 @@ layout: default
       <h1>        
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> 
       </h1>
-        <p style="color: grey;"> <em>Published: </em>{{ post.date | date: "%m/%d/%Y" }}</p>
+        <p style="color: #9A84EE;"> <em>Published: </em>{{ post.date | date: "%m/%d/%Y" }}</p>
 
 
       <div class="entry">
