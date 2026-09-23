@@ -11,7 +11,7 @@ I'm a Principal Engineer, and I run a junk removal and scrap metal business, Go 
 
 ## What Google Takeout Actually Gives You
 
-A Google Voice Takeout export isn't a spreadsheet. It's one HTML file per call or text, named by phone number, call type, and timestamp (`+13035551234 - Voicemail - 2026-06-08T21_12_10Z.html`), each one a full standalone page with inline CSS, a machine-generated transcript with per-word confidence scores, and an embedded audio player pointing at the matching MP3. Across 12 months on that number, that's 2,214 files in the main call log alone, plus another 239 already sorted into a spam folder.
+A Google Voice Takeout export isn't a spreadsheet. It's a directory of individual HTML artifacts, one per call or text, each a full standalone page carrying a fragment of the story: a machine-generated transcript, a timestamp, a phone number in the filename (`+13035551234 - Voicemail - 2026-06-08T21_12_10Z.html`). Across 12 months on that number, that's 2,214 files in the main call log alone, plus another 239 already sorted into a spam folder.
 
 Buried in there was the actual signal: personal calls mixed with a steady, growing stream of "I have a mattress I need picked up" texts once the number went live as a business line.
 
@@ -48,17 +48,19 @@ Every row above "phone number" looks like data. Only the last one is.
 
 ## The Fix: Dedupe to the Real-World Entity First
 
-The fix was to stop classifying files and start classifying *people*. For every phone number, I combined all of its messages across the full time window into one blob, ran the category match against that combined text exactly once, and used the earliest contact date as the lead's month. Priority order mattered too: mattress before scrap metal before junk removal before a general catch-all, so a conversation that happened to mention both a mattress and some spare metal didn't get counted twice. That ordering reflects a real business priority call I made, not an arbitrary if/else chain. Anything that was pure scheduling chatter with no identifiable item, or a personal/vendor message with no request in it at all, got pulled out and reported separately instead of inflating the lead count.
+The fix was to stop classifying files and start classifying *lead entities*. For every phone number, I combined all of its messages across the full time window into one blob, ran the category match against that combined text exactly once, and used the earliest contact date as the lead's month. Priority order mattered too: mattress before scrap metal before junk removal before a general catch-all, so a conversation that happened to mention both a mattress and some spare metal didn't get counted twice. That ordering reflects a real business priority call I made, not an arbitrary if/else chain. Anything that was pure scheduling chatter with no identifiable item, or a personal/vendor message with no request in it at all, got pulled out and reported separately instead of inflating the lead count.
 
 Phone number is the best entity key available in this data, but it's not a perfect one, and it's worth saying so instead of pretending otherwise. A shared household phone, a number that changes hands, or a business line reused by a different owner years later could all violate the one-number-one-lead assumption. There's a second gap in the same spirit: collapsing a full 12-month window into a single earliest-contact date treats someone who messages in March and comes back with an unrelated job in October as one lead instead of two. A tighter version of this would sessionize by a gap in contact, not just dedupe by number. I didn't build that yet. Phone number, even with these caveats, was dramatically closer to the real business question than individual files ever were, and that's the bar it needed to clear.
 
 The corrected numbers were smaller, and that was the point:
 
 ```
-Initial classifier:      423 leads
-After entity resolution: 161 leads
-Inflation removed:       262 leads (62% of the original count)
+Initial classifier:      423 lead records
+After entity resolution: 161 unique lead entities
+Overcount:               262 records, 62% of the initial total
 ```
+
+That overcount wasn't 262 fake leads. It was a mix of true duplicates, miscategorized noise, and conversations split across categories, exactly the failure modes described above, all of it invisible until someone checked the count against the real-world entities behind it.
 
 62 real spam numbers instead of 89, and categories that held up when I actually read the transcripts behind them. A report that survives someone checking your work is worth more than one that looks better and doesn't.
 
@@ -66,7 +68,7 @@ Inflation removed:       262 leads (62% of the original count)
 
 ## The Business Outcome
 
-That corrected report became the actual pitch. I'm now working out an exclusive lead-routing deal (all categories, all leads from the website, tracked through a third-party call-tracking tool instead of the personal Google Voice number) at a flat monthly rate, benchmarked against what exclusive local-service leads actually go for. Junk removal leads run $30-80 through Google Local Services Ads, for comparison. None of that pricing conversation happens without a lead count a buyer can trust, and a buyer can't trust a count until you've tried to break it yourself first.
+A buyer isn't purchasing messages. They're purchasing opportunities, and the unit of value in the pitch has to match the unit actually being sold. That corrected report became the actual pitch. I'm now working out an exclusive lead-routing deal (all categories, all leads from the website, tracked through a third-party call-tracking tool instead of the personal Google Voice number) at a flat monthly rate, benchmarked against what exclusive local-service leads actually go for. Junk removal leads run $30-80 through Google Local Services Ads, for comparison. None of that pricing conversation happens without a lead count a buyer can trust, and a buyer can't trust a count until you've tried to break it yourself first.
 
 ---
 
