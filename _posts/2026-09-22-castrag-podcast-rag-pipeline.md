@@ -93,7 +93,7 @@ What I can't replicate for $33: the accountability of an actual recurring coachi
 
 Still — for the price of extracting the framework itself, this beat a month of the subscription by about 18x.
 
-I open-sourced the pipeline as **castrag**: chunk it, transcribe it, summarize it, index it, ask it questions. Point it at your own audio.
+I open-sourced the pipeline as **[castrag](https://github.com/snowmac/castrag)**: chunk it, transcribe it, summarize it, index it, ask it questions. Point it at your own audio.
 
 ---
 *Ramblings from an ADHD brain that finally has a coach it can actually afford.*
