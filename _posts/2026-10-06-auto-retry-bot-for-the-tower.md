@@ -1,28 +1,23 @@
 ---
 layout: post
-title: "Building an auto-retry bot for The Tower in Python"
+title: "I Wrote a 150-Line Python Bot So My Idle Game Earns Coins While I Sleep"
 date: 2026-10-06
-categories: Python Automation macOS
+categories: Python Automation macOS Engineering
 ---
 
-The Tower is an idle tower-defense game. A run takes roughly 19 to 30 minutes at the tier I play, then a GAME STATS dialog appears and waits for a click on RETRY. If I'm away, the game sits idle and earns nothing. So I wrote a script to click for me.
+I play an idle tower-defense game called The Tower. A run at my tier takes 19 to 30 minutes and pays out about 30 million coins. Then a GAME STATS dialog pops up and waits for me to click RETRY.
 
-The whole thing is one Python file, about 150 lines, plus a small PNG template.
+If I'm asleep, the game sits on that dialog and earns nothing. Ten hours of that is somewhere between 20 and 30 runs, or 600 to 900 million coins, left on the table.
 
-## What it does
+**So I wrote a bot to click the button.** One Python file, about 150 lines, one small PNG.
 
-- Finds the "The Tower" window, wherever it is on screen.
-- Every 60 seconds, looks for the RETRY button and clicks it.
-- 60 seconds after a retry, taps the Defense tab and the Health upgrade.
-- Taps Health again at a random interval between 90 and 300 seconds.
-- Every 5 seconds, looks for the gem CLAIM button and clicks it.
-- Writes every action to a log file, with a heartbeat every 30 minutes.
+## The Bet
 
-## How it works
+Auto-upgrade and auto-perks are already turned on in the game, and I have ads off, so a run needs no decisions from me. The only human step is the click. If a script can see the dialog and click RETRY, the game plays itself overnight.
 
-### Finding the window
+## Problem One: Find the Window Wherever It Is
 
-macOS exposes the window list through Quartz. Each entry carries a title, an owner name and its bounds on screen:
+macOS lists every window through Quartz, with its title and its bounds on screen. The script reads the bounds on every loop and works out every click as a fraction of the window.
 
 ```python
 def find_window(title):
@@ -36,17 +31,11 @@ def find_window(title):
     return None, None
 ```
 
-The script reads the bounds on every loop. That is why the window can sit on the left, middle or right of the screen and nothing changes.
+That means the window can sit on the left, the middle or the right of the screen and nothing changes. The only rule is that nothing can cover it, because clicks are global and land on whatever is on top.
 
-### Seeing the screen
+## Problem Two: Teach It What RETRY Looks Like
 
-`screencapture -l <window id>` captures one window by id. It works even when part of the window is covered. The script loads the PNG with OpenCV.
-
-This needs Screen Recording permission for your terminal app. Without it, the capture fails and the error message does not say why.
-
-### Recognizing buttons
-
-Buttons are found with template matching. I saved a crop of the RETRY button as `retry.png`, and `cv2.matchTemplate` slides it over the live frame:
+The script captures the window with `screencapture -l` and slides a saved picture of the RETRY button over it with OpenCV template matching:
 
 ```python
 res = cv2.matchTemplate(img, tpl, cv2.TM_CCOEFF_NORMED)
@@ -55,17 +44,15 @@ if score >= 0.85:
     ...  # click the centre of the match
 ```
 
-A score of 0.85 or higher counts as a match. In practice the real button scores 1.00, so there is a lot of room.
+The real button scores 1.00, so 0.85 leaves a lot of room. I didn't want to hand-crop the template, so `autoclick.py --learn` crops it from a live capture while the dialog is up. The template always matches the exact pixels on my screen.
 
-The template is created by the script itself. With the dialog showing, run `autoclick.py --learn` and it crops the button from a live capture, so the template always matches the real pixels and scale of your screen.
+**One gotcha:** without Screen Recording permission for your terminal, `screencapture` just fails, and the error doesn't say why.
 
-The CLAIM button holds a gem count that changes, so its template is only the "CLAIM" text row. The first attempt at detecting that button was too loose. A magenta game effect passed through the area and was saved as the template. I tightened the check to require the cyan border on both sides plus white text, and removed the bad file.
+## Problem Three: The Click That Did Nothing
 
-### Clicking
+First real test. The match score was 1.00. The script logged `retry found -> click`. The dialog stayed exactly where it was.
 
-Click points are the match position converted from image pixels to screen coordinates, using the current window bounds. The fixed targets, the Defense tab and the Health upgrade box, are stored as fractions of the window, for example `(0.374, 0.975)`.
-
-My first version did nothing. The match score was 1.00 and the script logged a click, but the game ignored it. The fix was to send a mouse-move event first, then a mouse-down and mouse-up with longer pauses:
+My click was a mouse-down and a mouse-up fired back to back. The game ignored it. The fix was to move the mouse first, then press and release with real pauses:
 
 ```python
 def click(x, y):
@@ -78,42 +65,45 @@ def click(x, y):
         time.sleep(d)
 ```
 
-Clicking needs Accessibility permission as well.
+Same position, same button, but now the game sees something that looks like a person. The very next run restarted on its own.
 
-### The loop
+## Problem Four: Retry Wasn't Enough
 
-One loop ticks once a second. Separate timestamps decide what is due: the next RETRY check, the next claim check, the shield tap, the next Health tap. A RETRY click resets the shield and Health schedule, because a new run starts from scratch.
+Once RETRY worked, I added the rest of what I'd do by hand:
 
-Before any timed tap, the script checks for the RETRY dialog again. If it is up, it clicks RETRY instead. That stops a stray tap from landing on the dialog.
+- 60 seconds after a retry, tap the Defense tab, then the Health upgrade.
+- Tap Health again at a random interval between 90 and 300 seconds.
+- Every 5 seconds, look for the gem CLAIM button and tap it.
 
-## Limits
+Those taps use fixed positions stored as window fractions. The CLAIM button holds a gem count that changes, so its template is only the word "CLAIM".
 
-- It moves your real mouse. You cannot use the Mac while it clicks.
-- The game window must be on screen, uncovered, and on the active Space. Clicks are global, so they land on whatever is on top.
-- The fixed tap positions fit this window layout. A different layout needs new fractions.
-- It only knows about RETRY, CLAIM and the timed taps. Any other popup would leave it stuck. I have ads turned off in the game and see no other popups, so I am not worried, but the log makes a stall easy to spot: if the last line is old, it stopped.
-- I tested the full flow with short timers. I have not yet watched the real 60 and 300 second timings run for hours.
+**My first CLAIM capture saved the wrong thing.** The watcher fired on a bright magenta game effect that drifted through the spot, and I got a template of a purple arrow. I tightened the check to require a cyan border on both sides plus white text, and threw the bad file away. A blank or wrong template is worse than none, because it matches everywhere.
 
-I keep the Mac awake with `caffeinate -d -i`. Display sleep or a screen lock would block both capture and clicks.
+Before any timed tap, the script checks for the RETRY dialog again. If the dialog is up, it clicks RETRY instead of tapping a game button underneath it.
 
-## Is it worth it?
+## Problem Five: Trust, but Check the Log
 
-For a single-player idle game, I think so. At about 20 to 30 runs in a 10-hour night and about 30 million coins per run, that is several hundred million coins I would not otherwise collect. I did not check the game's terms of service, so if you play online or on leaderboards, read them first.
+I'm going to leave this running while I'm asleep, so I need to see what it did. Every action goes to `autoclick.log` with a date and time, and there's an `alive` line every 30 minutes. In the morning:
 
-## Running it
-
-```bash
-python3 -m venv .venv
-.venv/bin/pip install opencv-python-headless numpy pyobjc-framework-Quartz
-
-# with the GAME STATS dialog on screen
-.venv/bin/python autoclick.py --learn
-
-# with the CLAIM button on screen (optional)
-.venv/bin/python autoclick.py --learn-claim
-
-# run it
-caffeinate -d -i .venv/bin/python autoclick.py
+```
+tail autoclick.log
 ```
 
-The log is written to `autoclick.log` next to the script. Check it with `tail autoclick.log`.
+If the last line is hours old, it stopped. If it ends with `alive`, it ran all night. The count of `retry found` lines tells me how many runs it finished.
+
+## The Verdict
+
+**It works.** I watched it click RETRY, the next run started, then the shield tab and Health taps fired on schedule. The CLAIM tap matched at 1.00 on a live button.
+
+Honest caveats:
+
+- **I tested with short timers.** The real 60 and 300 second timings haven't run for hours yet. The log will tell me.
+- **It moves my real mouse.** I can't use the Mac while it clicks.
+- **It only knows RETRY, CLAIM and the timed taps.** Any other popup would leave it stuck. I have ads off and see no other popups.
+- **I run it under `caffeinate -d -i`.** A sleeping display or a screen lock blocks both capture and clicks.
+- **I didn't read the game's terms of service.** It's single-player and I'm only clicking buttons I'd click anyway, but check yours before pointing a bot at anything with leaderboards.
+
+For a script this small, the trade is hard to argue with: one short script, and a game that earns instead of idling.
+
+---
+*Ramblings from an ADHD brain that would rather write a bot than set an alarm for 3 a.m.*
