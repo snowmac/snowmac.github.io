@@ -5,9 +5,9 @@ date: 2026-10-06
 categories: Python Automation macOS Engineering
 ---
 
-I play an idle tower-defense game called The Tower. A run at my tier takes 19 to 30 minutes and pays out about 30 million coins. Then a GAME STATS dialog pops up and waits for me to click RETRY.
+I play an idle tower-defense game called The Tower. A run at my tier takes about 25 minutes and pays out about 12 million coins, roughly 30 million an hour. Then a GAME STATS dialog pops up and waits for me to click RETRY.
 
-If I'm asleep, the game sits on that dialog and earns nothing. Ten hours of that is somewhere between 20 and 30 runs, or 600 to 900 million coins, left on the table.
+If I'm asleep, the game sits on that dialog and earns nothing. Ten hours of that is about 24 runs, or around 300 million coins, left on the table.
 
 **So I wrote a bot to click the button.** One Python file, about 150 lines, one small PNG.
 
@@ -93,13 +93,18 @@ If the last line is hours old, it stopped. If it ends with `alive`, it ran all n
 
 ## The Verdict
 
-**It works.** I watched it click RETRY, the next run started, then the shield tab and Health taps fired on schedule. The CLAIM tap matched at 1.00 on a live button.
+**It ran all night.** I started it at about 21:48 and checked at 06:30. The log shows 23 RETRY clicks at a 1.00 match score, one about every 25 minutes, with no gaps and no "window not found" lines. The shield-tab, Health and CLAIM taps fired after every retry.
+
+The game's own Battle History agrees. Full runs reached waves 177 to 195 and paid about 12.3 million coins each, at 29 to 30.7 million coins an hour. A few runs died early (waves 77, 90, 140 and 141) and paid 4 to 9 million. Across the 20 finished runs I could see in the history, the average was about 11.4 million coins.
+
+My coin total went from 46.8 million to 339.5 million, a net gain of about 293 million in 9.5 hours. That is about 31 million an hour, with me asleep.
+
+I originally guessed 30 million coins per run. That was wrong. The 30 million was per hour. The log and the game history are the numbers to trust.
 
 Honest caveats:
 
-- **I tested with short timers.** The real 60 and 300 second timings haven't run for hours yet. The log will tell me.
 - **It moves my real mouse.** I can't use the Mac while it clicks.
-- **It only knows RETRY, CLAIM and the timed taps.** Any other popup would leave it stuck. I have ads off and see no other popups.
+- **It only knows RETRY, CLAIM and the timed taps.** Any other popup would leave it stuck. I have ads off and saw no other popups overnight.
 - **I run it under `caffeinate -d -i`.** A sleeping display or a screen lock blocks both capture and clicks.
 - **I didn't read the game's terms of service.** It's single-player and I'm only clicking buttons I'd click anyway, but check yours before pointing a bot at anything with leaderboards.
 
